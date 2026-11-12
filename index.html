@@ -606,7 +606,7 @@
             <div class="space-y-4 my-4">
                 <div>
                     <label class="block text-xs font-semibold text-slate-300 mb-1">Nomor WhatsApp Admin (Kode Negara 62):</label>
-                    <input type="text" id="adminWaInput" placeholder="Contoh: 6281234567890" class="w-full px-3 py-2.5 bg-slate-950 border border-slate-700 rounded-xl text-sm text-white font-mono focus:border-brand-500 focus:outline-none">
+                    <input type="text" id="adminWaInput" placeholder="6281987654321" class="w-full px-3 py-2.5 bg-slate-950 border border-slate-700 rounded-xl text-sm text-white font-mono focus:border-brand-500 focus:outline-none">
                     <p class="text-[10px] text-slate-500 mt-1">Gunakan format angka murni tanpa spasi atau karakter +.</p>
                 </div>
 
@@ -641,7 +641,7 @@
 
         // Admin Configuration stored in localStorage
         let adminConfig = {
-            waNumber: localStorage.getItem('ARCSTORE_admin_wa') || '6281234567890',
+            waNumber: localStorage.getItem('ARCSTORE_admin_wa') || '6281987654321',
             tagline: localStorage.getItem('ARCSTORE_tagline') || 'SMM & Digital Account Services'
         };
 
@@ -1402,7 +1402,7 @@ Mohon kirimkan metode pembayaran (QRIS / DANA / Bank BCA). Terima kasih!`;
             let inputTagline = document.getElementById('adminTaglineInput').value.trim();
 
             if (!inputWa || inputWa.length < 8) {
-                showToast('❌ Masukkan nomor WhatsApp yang valid (contoh: 6281234567890)');
+                showToast('❌ Masukkan nomor WhatsApp yang valid (6281987654321)');
                 return;
             }
 
