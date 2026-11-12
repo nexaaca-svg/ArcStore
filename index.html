@@ -261,7 +261,7 @@
             <div class="space-y-4">
                 <div>
                     <label class="block text-xs font-semibold text-slate-300 mb-1">Nomor WhatsApp Admin</label>
-                    <input type="text" id="adminWaInput" placeholder="6283875839287" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-4 py-2.5 text-sm text-white outline-none">
+                    <input type="text" id="adminWaInput" placeholder="6281234567890" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-4 py-2.5 text-sm text-white outline-none">
                 </div>
                 <button onclick="saveAdminWa()" class="w-full py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-sm font-semibold transition shadow-md">
                     Simpan Pengaturan
@@ -439,7 +439,7 @@
         let selectedProduct = null;
 
         // Default Admin WA number
-        let adminWaNumber = localStorage.getItem('ARSTORE_admin_wa') || '6283875839287';
+        let adminWaNumber = localStorage.getItem('ARSTORE_admin_wa') || '6281234567890';
         document.getElementById('adminWaInput').value = adminWaNumber;
 
         function renderProducts() {
