@@ -606,7 +606,7 @@
             <div class="space-y-4 my-4">
                 <div>
                     <label class="block text-xs font-semibold text-slate-300 mb-1">Nomor WhatsApp Admin (Kode Negara 62):</label>
-                    <input type="text" id="adminWaInput" placeholder="6281987654321" class="w-full px-3 py-2.5 bg-slate-950 border border-slate-700 rounded-xl text-sm text-white font-mono focus:border-brand-500 focus:outline-none">
+                    <input type="text" id="adminWaInput" placeholder="6283875839287" class="w-full px-3 py-2.5 bg-slate-950 border border-slate-700 rounded-xl text-sm text-white font-mono focus:border-brand-500 focus:outline-none">
                     <p class="text-[10px] text-slate-500 mt-1">Gunakan format angka murni tanpa spasi atau karakter +.</p>
                 </div>
 
@@ -641,12 +641,12 @@
 
         // Admin Configuration stored in localStorage
         let adminConfig = {
-            waNumber: localStorage.getItem('ARCSTORE_admin_wa') || '6281987654321',
+            waNumber: localStorage.getItem('ARCSTORE_admin_wa') || '6283875839287',
             tagline: localStorage.getItem('ARCSTORE_tagline') || 'SMM & Digital Account Services'
         };
 
         function updateConfigDisplay() {
-            document.getElementById('footerWaDisplay').textContent = '+' + adminConfig.waNumber.replace(/(\d{2})(\d{3})(\d{4})(\d+)/, "$1 $2-$3-$4");
+            document.getElementById('footerWaDisplay').textContent = '+' + adminConfig.waNumber.replace(/(\d{2})(\d{3})(\d{4})(\d+)/, "Rp1 Rp2-Rp3-Rp4");
             document.getElementById('headerTagline').textContent = adminConfig.tagline;
         }
         updateConfigDisplay();
@@ -1174,29 +1174,29 @@
                     <div>
                         <!-- Header Icon & Badge -->
                         <div class="flex items-center justify-between mb-4">
-                            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br ${item.brandColor} flex items-center justify-center text-white text-xl shadow-lg">
-                                <i class="${item.icon}"></i>
+                            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br Rp{item.brandColor} flex items-center justify-center text-white text-xl shadow-lg">
+                                <i class="Rp{item.icon}"></i>
                             </div>
                             <div class="flex flex-col items-end gap-1">
-                                <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full border ${item.badgeStyle}">
-                                    ${item.badge}
+                                <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full border Rp{item.badgeStyle}">
+                                    Rp{item.badge}
                                 </span>
-                                ${item.popular ? '<span class="text-[9px] font-black uppercase px-2 py-0.5 rounded-md bg-brand-600 text-white tracking-wider">REKOMENDASI</span>' : ''}
+                                Rp{item.popular ? '<span class="text-[9px] font-black uppercase px-2 py-0.5 rounded-md bg-brand-600 text-white tracking-wider">REKOMENDASI</span>' : ''}
                             </div>
                         </div>
 
                         <!-- Platform & Title -->
                         <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1 flex items-center gap-1.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-brand-400"></span> ${item.platform}
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-400"></span> Rp{item.platform}
                         </div>
-                        <h3 class="text-base font-extrabold text-white group-hover:text-brand-300 transition-colors line-clamp-2 mb-3 leading-snug">${item.title}</h3>
+                        <h3 class="text-base font-extrabold text-white group-hover:text-brand-300 transition-colors line-clamp-2 mb-3 leading-snug">Rp{item.title}</h3>
 
                         <!-- Specs Bullet Points -->
                         <ul class="space-y-1.5 text-xs text-slate-300 mb-5">
-                            ${item.specs.slice(0, 3).map(spec => `
+                            Rp{item.specs.slice(0, 3).map(spec => `
                                 <li class="flex items-start gap-2">
                                     <i class="fa-solid fa-circle-check text-emerald-400 text-xs mt-0.5 flex-shrink-0"></i>
-                                    <span class="line-clamp-1">${spec}</span>
+                                    <span class="line-clamp-1">Rp{spec}</span>
                                 </li>
                             `).join('')}
                         </ul>
@@ -1205,15 +1205,15 @@
                     <!-- Price & Actions -->
                     <div class="pt-3 border-t border-slate-800/80">
                         <div class="flex items-baseline gap-2 mb-3">
-                            <span class="text-xl font-black text-emerald-400">${formattedPrice}</span>
-                            <span class="text-xs text-slate-500 line-through">${formattedOldPrice}</span>
+                            <span class="text-xl font-black text-emerald-400">Rp{formattedPrice}</span>
+                            <span class="text-xs text-slate-500 line-through">Rp{formattedOldPrice}</span>
                         </div>
 
                         <div class="grid grid-cols-2 gap-2">
-                            <button onclick="openProductModal('${item.id}')" class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700/80 text-slate-200 text-xs font-bold transition-colors flex items-center justify-center gap-1">
+                            <button onclick="openProductModal('Rp{item.id}')" class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700/80 text-slate-200 text-xs font-bold transition-colors flex items-center justify-center gap-1">
                                 <i class="fa-solid fa-circle-info"></i> Detail
                             </button>
-                            <button onclick="openProductModal('${item.id}')" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-extrabold transition-all glow-wa flex items-center justify-center gap-1.5">
+                            <button onclick="openProductModal('Rp{item.id}')" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-extrabold transition-all glow-wa flex items-center justify-center gap-1.5">
                                 <i class="fa-brands fa-whatsapp text-sm"></i> Order
                             </button>
                         </div>
@@ -1257,7 +1257,7 @@
             document.querySelectorAll('.cat-btn').forEach(btn => {
                 btn.className = "cat-btn px-4 py-2 rounded-xl font-semibold text-xs sm:text-sm whitespace-nowrap bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 transition-all";
             });
-            const activeBtn = document.getElementById(`cat-${cat}`);
+            const activeBtn = document.getElementById(`cat-Rp{cat}`);
             if (activeBtn) {
                 activeBtn.className = "cat-btn px-4 py-2 rounded-xl font-bold text-xs sm:text-sm whitespace-nowrap bg-brand-600 text-white shadow-md shadow-brand-500/20 transition-all";
             }
@@ -1276,7 +1276,7 @@
             if (plat === 'Shopee / Tokopedia') safeId = 'Shopee';
             if (plat === 'X (Twitter)') safeId = 'Twitter';
             
-            const activePill = document.getElementById(`plat-${safeId}`);
+            const activePill = document.getElementById(`plat-Rp{safeId}`);
             if (activePill) {
                 activePill.className = "plat-pill px-3 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap bg-brand-500/20 text-brand-300 border border-brand-500/40 transition-all";
             }
@@ -1304,7 +1304,7 @@
 
             // Icon & colors
             const iconBox = document.getElementById('modalIconContainer');
-            iconBox.className = `w-14 h-14 rounded-2xl bg-gradient-to-br ${product.brandColor} flex items-center justify-center text-2xl text-white shadow-lg`;
+            iconBox.className = `w-14 h-14 rounded-2xl bg-gradient-to-br Rp{product.brandColor} flex items-center justify-center text-2xl text-white shadow-lg`;
             document.getElementById('modalIcon').className = product.icon;
 
             // Specs bullet points
@@ -1312,7 +1312,7 @@
             specsContainer.innerHTML = product.specs.map(spec => `
                 <li class="flex items-start gap-2">
                     <i class="fa-solid fa-circle-check text-emerald-400 text-xs mt-0.5"></i>
-                    <span>${spec}</span>
+                    <span>Rp{spec}</span>
                 </li>
             `).join('');
 
@@ -1335,7 +1335,7 @@
             document.querySelectorAll('.mult-btn').forEach(btn => {
                 btn.className = "mult-btn px-2.5 py-1 rounded-lg text-xs font-bold bg-slate-800 text-slate-300 hover:bg-slate-700";
             });
-            const activeBtn = Array.from(document.querySelectorAll('.mult-btn')).find(b => b.textContent === `${currentMultiplier}x`);
+            const activeBtn = Array.from(document.querySelectorAll('.mult-btn')).find(b => b.textContent === `Rp{currentMultiplier}x`);
             if (activeBtn) {
                 activeBtn.className = "mult-btn px-2.5 py-1 rounded-lg text-xs font-bold bg-brand-600 text-white shadow-md shadow-brand-500/30";
             }
@@ -1366,22 +1366,22 @@
             const message = 
 `Halo Admin ARCSTORE, saya mau order via Website Official:
 
-📦 *LAYANAN:* ${currentModalProduct.title}
-🏷️ *KODE SMM:* ${currentModalProduct.id}
-🎯 *TARGET (USER/LINK):* ${targetInput}
-🔢 *KELIPATAN:* ${currentMultiplier}x Paket
-💵 *TOTAL HARGA:* ${formattedTotal}
-${note ? `📝 *CATATAN:* ${note}\n` : ''}
+📦 *LAYANAN:* Rp{currentModalProduct.title}
+🏷️ *KODE SMM:* Rp{currentModalProduct.id}
+🎯 *TARGET (USER/LINK):* Rp{targetInput}
+🔢 *KELIPATAN:* Rp{currentMultiplier}x Paket
+💵 *TOTAL HARGA:* Rp{formattedTotal}
+Rp{note ? `📝 *CATATAN:* Rp{note}\n` : ''}
 Mohon kirimkan metode pembayaran (QRIS / DANA / Bank BCA). Terima kasih!`;
 
-            const url = `https://wa.me/${adminConfig.waNumber}?text=${encodeURIComponent(message)}`;
+            const url = `https://wa.me/Rp{adminConfig.waNumber}?text=Rp{encodeURIComponent(message)}`;
             window.open(url, '_blank');
             closeProductModal();
         }
 
         function contactGeneralWA(topic = 'Konsultasi Layanan ARCSTORE') {
-            const message = `Halo Admin ARCSTORE, saya mau ${topic}. Mohon bantuannya!`;
-            const url = `https://wa.me/${adminConfig.waNumber}?text=${encodeURIComponent(message)}`;
+            const message = `Halo Admin ARCSTORE, saya mau Rp{topic}. Mohon bantuannya!`;
+            const url = `https://wa.me/Rp{adminConfig.waNumber}?text=Rp{encodeURIComponent(message)}`;
             window.open(url, '_blank');
         }
 
@@ -1402,7 +1402,7 @@ Mohon kirimkan metode pembayaran (QRIS / DANA / Bank BCA). Terima kasih!`;
             let inputTagline = document.getElementById('adminTaglineInput').value.trim();
 
             if (!inputWa || inputWa.length < 8) {
-                showToast('❌ Masukkan nomor WhatsApp yang valid (6281987654321)');
+                showToast('❌ Masukkan nomor WhatsApp yang valid (6283875839287)');
                 return;
             }
 
