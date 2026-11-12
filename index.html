@@ -470,22 +470,22 @@
                     <div>
                         <div class="flex items-center justify-between mb-4">
                             <div class="w-12 h-12 rounded-2xl bg-brand-600/20 text-brand-400 flex items-center justify-center text-xl group-hover:scale-110 transition duration-300">
-                                <i class="${p.icon}"></i>
+                                <i class="Rp{p.icon}"></i>
                             </div>
                             <span class="px-3 py-1 rounded-full text-xs font-semibold bg-brand-900/80 text-brand-300 border border-brand-500/30">
-                                ${p.badge}
+                                Rp{p.badge}
                             </span>
                         </div>
-                        <span class="text-xs text-slate-400 font-medium">${p.platform}</span>
-                        <h3 class="text-lg font-bold text-white mt-0.5 mb-2">${p.name}</h3>
-                        <p class="text-xs text-slate-400 leading-relaxed mb-6">${p.desc}</p>
+                        <span class="text-xs text-slate-400 font-medium">Rp{p.platform}</span>
+                        <h3 class="text-lg font-bold text-white mt-0.5 mb-2">Rp{p.name}</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-6">Rp{p.desc}</p>
                     </div>
                     <div>
                         <div class="flex items-center justify-between mb-4 pt-4 border-t border-slate-800/80">
                             <span class="text-xs text-slate-500 font-medium">Mulai dari</span>
-                            <span class="text-base font-extrabold text-brand-400">Rp ${p.options[0].price.toLocaleString('id-ID')}</span>
+                            <span class="text-base font-extrabold text-brand-400">Rp Rp{p.options[0].price.toLocaleString('id-ID')}</span>
                         </div>
-                        <button onclick="openOrderModal(${p.id})" class="w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-xs transition shadow-lg shadow-brand-600/20 flex items-center justify-center gap-2">
+                        <button onclick="openOrderModal(Rp{p.id})" class="w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-xs transition shadow-lg shadow-brand-600/20 flex items-center justify-center gap-2">
                             <i class="fa-solid fa-cart-plus"></i> Order / Beli Sekarang
                         </button>
                     </div>
@@ -520,8 +520,8 @@
             selectedProduct = products.find(p => p.id === productId);
             if (!selectedProduct) return;
 
-            document.getElementById('modalIcon').className = `w-12 h-12 rounded-2xl bg-brand-600/20 text-brand-400 flex items-center justify-center text-xl ${selectedProduct.icon}`;
-            document.getElementById('modalCategory').innerText = `${selectedProduct.platform} • ${selectedProduct.badge}`;
+            document.getElementById('modalIcon').className = `w-12 h-12 rounded-2xl bg-brand-600/20 text-brand-400 flex items-center justify-center text-xl Rp{selectedProduct.icon}`;
+            document.getElementById('modalCategory').innerText = `Rp{selectedProduct.platform} • Rp{selectedProduct.badge}`;
             document.getElementById('modalTitle').innerText = selectedProduct.name;
 
             const select = document.getElementById('quantitySelect');
@@ -529,7 +529,7 @@
             selectedProduct.options.forEach((opt, idx) => {
                 const optEl = document.createElement('option');
                 optEl.value = idx;
-                optEl.innerText = `${opt.label} — Rp ${opt.price.toLocaleString('id-ID')}`;
+                optEl.innerText = `Rp{opt.label} — Rp Rp{opt.price.toLocaleString('id-ID')}`;
                 select.appendChild(optEl);
             });
 
@@ -552,8 +552,8 @@
             if (!selectedProduct) return;
             const optIndex = document.getElementById('quantitySelect').value;
             const selectedOpt = selectedProduct.options[optIndex];
-            document.getElementById('modalPriceText').innerText = `Rp ${selectedOpt.price.toLocaleString('id-ID')}`;
-            document.getElementById('totalPriceDisplay').innerText = `Rp ${selectedOpt.price.toLocaleString('id-ID')}`;
+            document.getElementById('modalPriceText').innerText = `Rp Rp{selectedOpt.price.toLocaleString('id-ID')}`;
+            document.getElementById('totalPriceDisplay').innerText = `Rp Rp{selectedOpt.price.toLocaleString('id-ID')}`;
         }
 
         function submitOrder(e) {
@@ -564,16 +564,16 @@
             const note = document.getElementById('noteInput').value || '-';
 
             const message = `Halo Kak, saya ingin memesan layanan di ARSTORE:%0A%0A` +
-                            `📦 *Layanan:* ${selectedProduct.name}%0A` +
-                            `🏷️ *Platform:* ${selectedProduct.platform}%0A` +
-                            `🎯 *Target (User/Link):* ${target}%0A` +
-                            `📊 *Paket:* ${selectedOpt.label}%0A` +
-                            `💰 *Total Harga:* Rp ${selectedOpt.price.toLocaleString('id-ID')}%0A` +
-                            `📝 *Catatan:* ${note}%0A%0A` +
+                            `📦 *Layanan:* Rp{selectedProduct.name}%0A` +
+                            `🏷️ *Platform:* Rp{selectedProduct.platform}%0A` +
+                            `🎯 *Target (User/Link):* Rp{target}%0A` +
+                            `📊 *Paket:* Rp{selectedOpt.label}%0A` +
+                            `💰 *Total Harga:* Rp Rp{selectedOpt.price.toLocaleString('id-ID')}%0A` +
+                            `📝 *Catatan:* Rp{note}%0A%0A` +
                             `Mohon informasi pembayaran selanjutnya ya kak. Terima kasih!`;
 
             const currentWa = localStorage.getItem('ARSTORE_admin_wa') || adminWaNumber;
-            window.open(`https://wa.me/${currentWa}?text=${message}`, '_blank');
+            window.open(`https://wa.me/Rp{currentWa}?text=Rp{message}`, '_blank');
             closeOrderModal();
         }
 
