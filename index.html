@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="id" class="dark">
+<html lang="id" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARSTORE - Jasa SMM & Akun Digital Terpercaya</title>
+    <title>ARSTORE — Katalog Jasa SMM & Akun Digital Terlengkap</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -20,522 +20,814 @@
                             600: '#7c3aed',
                             700: '#6d28d9',
                             900: '#4c1d95',
-                        },
-                        cyanAccent: '#06b6d4',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #030712;
         }
-        .glass-card {
-            background: rgba(30, 27, 75, 0.6);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(139, 92, 246, 0.2);
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.72);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
-        .glow-effect {
-            box-shadow: 0 0 25px rgba(139, 92, 246, 0.25);
+        .product-card {
+            background: linear-gradient(180deg, rgba(17, 24, 39, 0.9) 0%, rgba(9, 13, 22, 0.95) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .product-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(139, 92, 246, 0.5);
+            box-shadow: 0 20px 35px -12px rgba(124, 58, 237, 0.28);
+        }
+        .glow-wa {
+            box-shadow: 0 6px 20px -4px rgba(16, 185, 129, 0.45);
+        }
+        .glow-brand {
+            box-shadow: 0 8px 25px -4px rgba(124, 58, 237, 0.45);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen selection:bg-brand-500 selection:text-white">
+<body class="text-slate-100 min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white">
 
-    <!-- Top Banner -->
-    <div class="bg-gradient-to-r from-brand-900 via-purple-900 to-brand-900 text-xs sm:text-sm py-2 px-4 text-center font-medium border-b border-brand-700/50 flex items-center justify-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span>🔥 <strong class="text-white">PROMO ARSTORE:</strong> Jasa SMM & Akun Digital Tanpa Password • Garansi Refill 100%!</span>
+    <!-- Top Promo Ticker -->
+    <div class="bg-gradient-to-r from-brand-950 via-indigo-900 to-brand-950 text-xs py-2.5 px-4 text-center border-b border-white/10 font-medium flex items-center justify-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <span>🔥 <strong>ARSTORE OFFICIAL:</strong> Jasa Followers, Likes, Views & Akun Siap Pakai • Tanpa Password • Garansi Refill 100%!</span>
     </div>
 
-    <!-- Header / Navbar -->
-    <header class="sticky top-0 z-40 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center glow-effect">
-                    <i class="fa-solid fa-store text-white text-lg"></i>
+    <!-- Sticky Navbar -->
+    <header class="sticky top-0 z-40 bg-slate-950/85 backdrop-blur-lg border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-br from-brand-500 via-indigo-600 to-cyan-500 flex items-center justify-center text-white shadow-lg glow-brand group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-bolt text-lg"></i>
                 </div>
                 <div>
-                    <h1 class="text-xl font-extrabold tracking-wider bg-gradient-to-r from-brand-400 to-purple-200 bg-clip-text text-transparent">ARSTORE</h1>
-                    <p class="text-xs text-slate-400" id="headerTagline">SMM & Digital Account Services</p>
+                    <span class="text-xl sm:text-2xl font-black tracking-tight bg-gradient-to-r from-white via-purple-100 to-brand-400 bg-clip-text text-transparent">ARSTORE</span>
+                    <span class="block text-[10px] text-cyan-400 font-bold tracking-widest uppercase">SMM & Digital Catalog</span>
                 </div>
-            </div>
+            </a>
 
-            <div class="flex items-center gap-3">
-                <button onclick="openAdminModal()" class="px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 hover:border-brand-500 text-xs text-slate-300 transition flex items-center gap-2">
-                    <i class="fa-solid fa-gear text-brand-400"></i>
-                    <span class="hidden sm:inline">Set Admin WA</span>
+            <!-- Right Actions -->
+            <div class="flex items-center gap-2.5 sm:gap-3">
+                <button onclick="openAdminModal()" class="px-3.5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700/80 text-xs font-semibold text-slate-300 hover:text-white transition flex items-center gap-2">
+                    <i class="fa-solid fa-sliders text-brand-400"></i>
+                    <span class="hidden sm:inline">Set No. WA</span>
                 </button>
-                <a href="#katalog" class="px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-sm font-semibold transition shadow-lg shadow-brand-600/30">
-                    <i class="fa-solid fa-cart-shopping mr-1.5"></i> Lihat Katalog
-                </a>
+                <button onclick="chatAdminDirect('Halo Admin ARSTORE, saya ingin bertanya seputar layanan katalog.')" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs sm:text-sm font-bold transition glow-wa flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-base sm:text-lg"></i>
+                    <span>Chat Admin</span>
+                </button>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative overflow-hidden py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
-        <div class="absolute inset-0 -z-10 flex items-center justify-center opacity-30 pointer-events-none">
-            <div class="w-96 h-96 bg-brand-600/30 rounded-full blur-3xl"></div>
-            <div class="w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"></div>
+    <!-- Hero Banner -->
+    <section class="relative overflow-hidden pt-12 pb-10 sm:pt-16 sm:pb-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
+        <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[550px] h-[280px] bg-brand-600/20 blur-[130px] rounded-full pointer-events-none"></div>
+
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-300 text-xs font-semibold mb-5">
+            <i class="fa-solid fa-shield-halved text-emerald-400"></i> 13+ Platform Lengkap • Order Otomatis ke WhatsApp
         </div>
-        
-        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-900/60 border border-brand-500/30 text-brand-300 text-xs font-semibold mb-6">
-            <i class="fa-solid fa-bolt text-amber-400"></i> Layanan Instan, Aman, & Bergaransi
-        </span>
-        <h2 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight max-w-4xl mx-auto leading-tight">
-            Pusat Jasa SMM & Akun Digital <span class="bg-gradient-to-r from-brand-400 via-purple-300 to-cyan-400 bg-clip-text text-transparent">Terlengkap & Termurah</span>
-        </h2>
-        <p class="mt-6 text-base sm:text-lg text-slate-400 max-w-2xl mx-auto">
-            Tingkatkan kredibilitas media sosialmu (Instagram, TikTok, YouTube, dll) dan dapatkan akun digital premium pilihan dengan proses cepat tanpa password.
+
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white max-w-4xl mx-auto leading-tight">
+            Katalog Lengkap Jasa SMM & <span class="bg-gradient-to-r from-brand-400 via-indigo-300 to-cyan-400 bg-clip-text text-transparent">Akun Digital ARSTORE</span>
+        </h1>
+        <p class="mt-4 text-slate-400 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+            Pilih platform favoritmu di bawah ini — mulai dari <strong>Instagram, YouTube, TikTok, WhatsApp, Telegram, Shopee/Tokopedia, Spotify, Twitch, Pinterest, LinkedIn, Facebook, Twitter (X)</strong>, hingga layanan custom lainnya.
         </p>
 
-        <!-- Search Bar -->
-        <div class="mt-10 max-w-xl mx-auto relative">
+        <!-- Search Input -->
+        <div class="mt-8 max-w-2xl mx-auto relative">
             <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
-            <input type="text" id="searchInput" oninput="filterProducts()" placeholder="Cari layanan (contoh: Followers Instagram, Akun Spotify, TikTok Views)..." class="w-full bg-slate-900/90 border border-slate-700 focus:border-brand-500 rounded-2xl py-4 pl-12 pr-4 text-sm text-white placeholder-slate-500 outline-none shadow-xl transition">
+            <input 
+                type="text" 
+                id="searchInput" 
+                oninput="applyFilters()" 
+                placeholder="Cari platform atau layanan (contoh: Instagram, YouTube, Shopee, Spotify, TikTok)..." 
+                class="w-full bg-slate-900/90 border border-slate-700/80 focus:border-brand-500 rounded-2xl py-4 pl-12 pr-4 text-sm text-white placeholder-slate-500 outline-none shadow-2xl transition"
+            >
         </div>
     </section>
 
     <!-- Main Catalog Section -->
-    <main id="katalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
-        
+    <main id="katalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 w-full flex-grow">
+
         <!-- Category Filter Tabs -->
-        <div class="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar">
-            <button onclick="filterCategory('semua')" class="cat-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-brand-600 text-white transition shadow-md shadow-brand-600/30 whitespace-nowrap">
-                Semua Layanan
+        <div class="flex items-center justify-start md:justify-center gap-2 overflow-x-auto pb-3 mb-4 no-scrollbar">
+            <button onclick="setCategory('all')" id="cat-all" class="cat-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-600 text-white shadow-lg shadow-brand-600/30 whitespace-nowrap transition">
+                Semua Platform (<span id="totalCountBadge">0</span>)
             </button>
-            <button onclick="filterCategory('smm')" class="cat-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-slate-900 text-slate-400 hover:text-white border border-slate-800 transition whitespace-nowrap">
-                Followers & Engagement
+            <button onclick="setCategory('sosmed')" id="cat-sosmed" class="cat-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 text-slate-400 hover:text-white border border-slate-800 whitespace-nowrap transition">
+                <i class="fa-solid fa-hashtag mr-1.5 text-pink-400"></i>Media Sosial
             </button>
-            <button onclick="filterCategory('akun')" class="cat-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-slate-900 text-slate-400 hover:text-white border border-slate-800 transition whitespace-nowrap">
-                Akun Siap Pakai
+            <button onclick="setCategory('hiburan')" id="cat-hiburan" class="cat-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 text-slate-400 hover:text-white border border-slate-800 whitespace-nowrap transition">
+                <i class="fa-solid fa-play mr-1.5 text-red-400"></i>Streaming & Hiburan
             </button>
-            <button onclick="filterCategory('marketplace')" class="cat-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-slate-900 text-slate-400 hover:text-white border border-slate-800 transition whitespace-nowrap">
-                Marketplace & Lainnya
+            <button onclick="setCategory('pesan')" id="cat-pesan" class="cat-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 text-slate-400 hover:text-white border border-slate-800 whitespace-nowrap transition">
+                <i class="fa-solid fa-comments mr-1.5 text-emerald-400"></i>Aplikasi Pesan
+            </button>
+            <button onclick="setCategory('marketplace')" id="cat-marketplace" class="cat-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 text-slate-400 hover:text-white border border-slate-800 whitespace-nowrap transition">
+                <i class="fa-solid fa-bag-shopping mr-1.5 text-orange-400"></i>Marketplace & Lainnya
             </button>
         </div>
 
-        <!-- Platform Pills Filter -->
-        <div class="flex items-center gap-2 overflow-x-auto pb-6 mb-8 no-scrollbar text-xs">
-            <span class="text-slate-500 font-medium whitespace-nowrap"><i class="fa-solid fa-filter mr-1"></i> Platform:</span>
-            <button onclick="filterPlatform('all')" class="plat-btn px-3 py-1.5 rounded-lg bg-brand-500 text-white font-medium transition">Semua</button>
-            <button onclick="filterPlatform('Instagram')" class="plat-btn px-3 py-1.5 rounded-lg bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800 transition">Instagram</button>
-            <button onclick="filterPlatform('TikTok')" class="plat-btn px-3 py-1.5 rounded-lg bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800 transition">TikTok</button>
-            <button onclick="filterPlatform('YouTube')" class="plat-btn px-3 py-1.5 rounded-lg bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800 transition">YouTube</button>
-            <button onclick="filterPlatform('WhatsApp')" class="plat-btn px-3 py-1.5 rounded-lg bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800 transition">WhatsApp</button>
-            <button onclick="filterPlatform('Telegram')" class="plat-btn px-3 py-1.5 rounded-lg bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800 transition">Telegram</button>
-            <button onclick="filterPlatform('Shopee')" class="plat-btn px-3 py-1.5 rounded-lg bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800 transition">Shopee / Tokopedia</button>
-            <button onclick="filterPlatform('Spotify')" class="plat-btn px-3 py-1.5 rounded-lg bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800 transition">Spotify & Hiburan</button>
-            <button onclick="filterPlatform('Lainnya')" class="plat-btn px-3 py-1.5 rounded-lg bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800 transition">Twitch / X / Lainnya</button>
+        <!-- Quick Platform Filter Pills (All 13 Platforms) -->
+        <div id="platformPillsContainer" class="flex items-center gap-2 overflow-x-auto pb-6 mb-6 no-scrollbar">
+            <!-- Populated dynamically via JS -->
         </div>
 
-        <!-- Product Grid -->
+        <!-- Product Visual Cards Grid -->
         <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            <!-- Dynamic Cards Inserted via JS -->
+            <!-- Cards generated dynamically with rich SVG visual artwork -->
         </div>
 
-        <!-- Empty State -->
-        <div id="emptyState" class="hidden text-center py-20">
-            <div class="w-16 h-16 bg-slate-900 rounded-full flex items-center justify-center mx-auto mb-4 text-slate-500 text-2xl">
-                <i class="fa-solid fa-box-open"></i>
+        <!-- Empty Search State -->
+        <div id="emptyState" class="hidden text-center py-16 glass-panel rounded-3xl my-6">
+            <div class="w-16 h-16 rounded-full bg-slate-800 flex items-center justify-center mx-auto mb-4 text-slate-400 text-2xl">
+                <i class="fa-solid fa-magnifying-glass"></i>
             </div>
-            <h3 class="text-lg font-bold text-white">Layanan tidak ditemukan</h3>
-            <p class="text-sm text-slate-400 mt-1">Coba kata kunci atau kategori lain yang kamu cari.</p>
+            <h3 class="text-lg font-bold text-white">Layanan Tidak Ditemukan</h3>
+            <p class="text-sm text-slate-400 mt-1 mb-6">Platform yang kamu cari belum tampil? Hubungi admin untuk pesanan khusus!</p>
+            <button onclick="chatAdminDirect('Halo Admin ARSTORE, saya ingin request layanan khusus di luar katalog.')" class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold inline-flex items-center gap-2 glow-wa">
+                <i class="fa-brands fa-whatsapp text-base"></i> Request Layanan ke WA Admin
+            </button>
         </div>
 
     </main>
 
-    <!-- How to Order & Info Section -->
-    <section class="border-t border-slate-800/80 bg-slate-900/40 py-16 px-4 sm:px-6 lg:px-8">
+    <!-- How to Order Section -->
+    <section class="border-t border-slate-800/80 bg-slate-900/40 py-14 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Cara Order di ARSTORE</h2>
-                <p class="text-slate-400 text-sm mt-2">Sangat mudah, cepat, dan aman tanpa memerlukan password akun Anda.</p>
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-brand-400 text-xs font-bold uppercase tracking-widest">Panduan Cepat</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">Cara Order di ARSTORE</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="glass-card p-6 rounded-2xl relative">
-                    <div class="w-10 h-10 rounded-xl bg-brand-600 flex items-center justify-center text-white font-bold mb-4">01</div>
-                    <h3 class="text-lg font-bold text-white mb-2">Pilih Layanan & Paket</h3>
-                    <p class="text-sm text-slate-400">Cari layanan followers, likes, views, atau akun siap pakai yang kamu inginkan di katalog ARSTORE.</p>
+                <div class="glass-panel p-6 rounded-2xl">
+                    <div class="w-10 h-10 rounded-xl bg-brand-600 text-white font-black flex items-center justify-center mb-4">01</div>
+                    <h3 class="text-base font-bold text-white mb-1.5">Pilih Platform & Paket</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Klik tombol <strong>Pesan via WA</strong> pada kartu platform yang kamu inginkan (Instagram, TikTok, YouTube, dll).</p>
                 </div>
-                <div class="glass-card p-6 rounded-2xl relative">
-                    <div class="w-10 h-10 rounded-xl bg-brand-600 flex items-center justify-center text-white font-bold mb-4">02</div>
-                    <h3 class="text-lg font-bold text-white mb-2">Klik Beli via WhatsApp</h3>
-                    <p class="text-sm text-slate-400">Masukkan username atau link target kamu pada form, lalu klik tombol kirim pesanan ke WhatsApp admin.</p>
+                <div class="glass-panel p-6 rounded-2xl">
+                    <div class="w-10 h-10 rounded-xl bg-cyan-600 text-white font-black flex items-center justify-center mb-4">02</div>
+                    <h3 class="text-base font-bold text-white mb-1.5">Isi Username / Link Target</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Pilih paket jumlah & masukkan username atau link tujuan. <strong>100% Aman Tanpa Password!</strong></p>
                 </div>
-                <div class="glass-card p-6 rounded-2xl relative">
-                    <div class="w-10 h-10 rounded-xl bg-brand-600 flex items-center justify-center text-white font-bold mb-4">03</div>
-                    <h3 class="text-lg font-bold text-white mb-2">Proses & Selesai</h3>
-                    <p class="text-sm text-slate-400">Lakukan pembayaran sesuai instruksi admin, pesanan akan langsung diproses dengan garansi refill 100%.</p>
+                <div class="glass-panel p-6 rounded-2xl">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white font-black flex items-center justify-center mb-4">03</div>
+                    <h3 class="text-base font-bold text-white mb-1.5">Otomatis Terkirim ke WhatsApp</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Format invoice otomatis terbuka di WhatsApp admin ARSTORE. Bayar & pesanan langsung diproses!</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-900 py-10 px-4 text-center text-xs text-slate-500">
+    <footer class="border-t border-slate-900 bg-slate-950 py-8 px-4 sm:px-6 lg:px-8 text-xs text-slate-500">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p>&copy; 2026 ARSTORE. All rights reserved. Professional SMM & Digital Services.</p>
-            <div class="flex items-center gap-4">
-                <span class="text-emerald-400 font-medium"><i class="fa-solid fa-circle-check mr-1"></i> Layanan Aktif 24/7</span>
+            <div class="flex items-center gap-2.5">
+                <div class="w-7 h-7 rounded-lg bg-brand-600 flex items-center justify-center text-white font-black text-xs">AR</div>
+                <span class="font-bold text-slate-300">ARSTORE Official</span>
+                <span>— Katalog Jasa SMM & Akun Digital</span>
+            </div>
+            <div>
+                WA Admin Terhubung: <span id="footerWaDisplay" class="text-emerald-400 font-bold">+62 838 7583 9287</span>
             </div>
         </div>
     </footer>
 
-    <!-- Order Modal -->
-    <div id="orderModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden items-center justify-center p-4">
-        <div class="glass-card w-full max-w-md rounded-3xl p-6 sm:p-8 relative border border-brand-500/30 shadow-2xl">
-            <button onclick="closeOrderModal()" class="absolute right-5 top-5 w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:text-white transition">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
+    <!-- Floating WhatsApp Button -->
+    <button 
+        onclick="chatAdminDirect('Halo Admin ARSTORE, saya ingin konsultasi pemesanan layanan.')"
+        class="fixed bottom-5 right-5 z-40 bg-emerald-500 hover:bg-emerald-400 text-white px-4 py-3.5 rounded-full shadow-2xl flex items-center gap-2.5 transition-all transform hover:scale-105 active:scale-95 glow-wa"
+        title="Hubungi WhatsApp ARSTORE"
+    >
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+        <span class="text-xs font-extrabold hidden sm:inline">Order Cepat WA</span>
+    </button>
 
-            <div class="flex items-center gap-3 mb-4">
-                <div id="modalIcon" class="w-12 h-12 rounded-2xl bg-brand-600/20 text-brand-400 flex items-center justify-center text-xl"></div>
+    <!-- ORDER MODAL (Per Platform WhatsApp Checkout) -->
+    <div id="orderModal" class="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-md hidden items-center justify-center p-4 overflow-y-auto">
+        <div class="glass-panel w-full max-w-md rounded-3xl overflow-hidden border border-brand-500/30 shadow-2xl my-6">
+            
+            <!-- Modal Top Visual Banner -->
+            <div id="modalBannerHeader" class="h-28 relative flex items-center px-6 bg-gradient-to-r from-brand-600 to-indigo-700">
+                <button onclick="closeOrderModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/40 hover:bg-black/60 text-white flex items-center justify-center transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <div class="flex items-center gap-4">
+                    <div class="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-md border border-white/25 flex items-center justify-center text-white text-3xl shadow-lg">
+                        <i id="modalPlatformIcon" class="fa-brands fa-instagram"></i>
+                    </div>
+                    <div>
+                        <span id="modalPlatformBadge" class="inline-block px-2.5 py-0.5 rounded-full bg-black/30 text-white text-[10px] font-bold uppercase tracking-wider mb-1">Platform</span>
+                        <h3 id="modalServiceTitle" class="text-lg font-extrabold text-white leading-tight">Nama Layanan</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Form Body -->
+            <form id="orderForm" onsubmit="submitOrderToWA(event)" class="p-6 space-y-4">
                 <div>
-                    <span id="modalCategory" class="text-xs text-brand-400 font-semibold uppercase tracking-wider"></span>
-                    <h3 id="modalTitle" class="text-lg font-bold text-white"></h3>
+                    <label class="block text-xs font-bold text-slate-300 mb-1.5">Pilih Paket / Variasi Layanan: <span class="text-rose-400">*</span></label>
+                    <select id="packageSelect" onchange="updateModalPrice()" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-3.5 py-3 text-xs sm:text-sm text-white outline-none transition cursor-pointer">
+                        <!-- Options injected via JS -->
+                    </select>
                 </div>
-            </div>
 
-            <div class="bg-slate-900/80 rounded-2xl p-4 mb-6 border border-slate-800">
-                <div class="flex justify-between items-center text-sm mb-1">
-                    <span class="text-slate-400">Harga Satuan:</span>
-                    <span id="modalPriceText" class="text-white font-bold"></span>
+                <div>
+                    <div class="flex items-center justify-between mb-1.5">
+                        <label id="targetFieldLabel" class="text-xs font-bold text-slate-300">Username / Link Target: <span class="text-rose-400">*</span></label>
+                        <span class="text-[10px] text-emerald-400 font-semibold"><i class="fa-solid fa-lock mr-1"></i>Tanpa Password</span>
+                    </div>
+                    <input 
+                        type="text" 
+                        id="targetInput" 
+                        required 
+                        placeholder="Contoh: @username atau https://..." 
+                        class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-3.5 py-3 text-xs sm:text-sm text-white placeholder-slate-500 outline-none transition"
+                    >
                 </div>
-                <div class="flex justify-between items-center text-sm">
-                    <span class="text-slate-400">Estimasi Proses:</span>
-                    <span class="text-emerald-400 font-medium">Instan / Cepat</span>
-                </div>
-            </div>
 
-            <form id="orderForm" onsubmit="submitOrder(event)">
-                <div class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-1.5">Catatan Tambahan (Opsional):</label>
+                    <input 
+                        type="text" 
+                        id="noteInput" 
+                        placeholder="Contoh: Minta proses bertahap / tanya stok dulu..." 
+                        class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 outline-none transition"
+                    >
+                </div>
+
+                <!-- Summary Box -->
+                <div class="p-3.5 rounded-2xl bg-slate-900/90 border border-slate-800 flex items-center justify-between">
                     <div>
-                        <label class="block text-xs font-semibold text-slate-300 mb-1.5" id="targetLabel">Username / Link Target</label>
-                        <input type="text" id="targetInput" required placeholder="Contoh: @username / https://..." class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 outline-none transition">
-                        <p class="text-[11px] text-slate-500 mt-1">🔒 Aman, tanpa memerlukan password akun!</p>
+                        <span class="text-[11px] text-slate-400 block">Estimasi Total Harga:</span>
+                        <span id="modalTotalPrice" class="text-xl font-black text-emerald-400">Rp 0</span>
                     </div>
-
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-300 mb-1.5">Jumlah / Paket</label>
-                        <select id="quantitySelect" onchange="updateTotalPrice()" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-4 py-3 text-sm text-white outline-none transition">
-                            <!-- Populated dynamically -->
-                        </select>
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-300 mb-1.5">Catatan Tambahan (Opsional)</label>
-                        <input type="text" id="noteInput" placeholder="Catatan khusus untuk admin..." class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-600 outline-none transition">
-                    </div>
-
-                    <div class="pt-2 flex items-center justify-between border-t border-slate-800">
-                        <div>
-                            <span class="text-xs text-slate-400 block">Total Pembayaran:</span>
-                            <span id="totalPriceDisplay" class="text-lg font-extrabold text-brand-400">Rp 0</span>
-                        </div>
-                        <button type="submit" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition shadow-lg shadow-emerald-600/30 flex items-center gap-2">
-                            <i class="fa-brands fa-whatsapp text-lg"></i> Beli via WA
-                        </button>
-                    </div>
+                    <span class="text-[11px] px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold">
+                        <i class="fa-solid fa-check-circle mr-1"></i>Garansi Refill
+                    </span>
                 </div>
+
+                <button type="submit" class="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm transition glow-wa flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> Kirim Pesanan ke WhatsApp
+                </button>
             </form>
         </div>
     </div>
 
-    <!-- Admin WA Config Modal -->
-    <div id="adminModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden items-center justify-center p-4">
-        <div class="glass-card w-full max-w-sm rounded-3xl p-6 relative border border-brand-500/30 shadow-2xl">
-            <button onclick="closeAdminModal()" class="absolute right-4 top-4 w-7 h-7 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:text-white transition">
+    <!-- ADMIN WA SETTINGS MODAL -->
+    <div id="adminModal" class="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="glass-panel w-full max-w-sm rounded-3xl p-6 relative border border-brand-500/30 shadow-2xl">
+            <button onclick="closeAdminModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-900 text-slate-400 hover:text-white flex items-center justify-center">
                 <i class="fa-solid fa-xmark"></i>
             </button>
-            <h3 class="text-base font-bold text-white mb-2"><i class="fa-solid fa-gear text-brand-400 mr-2"></i> Pengaturan Admin WA</h3>
-            <p class="text-xs text-slate-400 mb-4">Masukkan nomor WhatsApp tujuan penerima order (awali dengan 62).</p>
-            
+            <h3 class="text-base font-extrabold text-white mb-1"><i class="fa-brands fa-whatsapp text-emerald-400 mr-2"></i>Atur Nomor WhatsApp Tujuan</h3>
+            <p class="text-xs text-slate-400 mb-4">Semua tombol pesanan akan otomatis diarahkan ke nomor WA ini.</p>
+
             <div class="space-y-4">
                 <div>
-                    <label class="block text-xs font-semibold text-slate-300 mb-1">Nomor WhatsApp Admin</label>
-                    <input type="text" id="adminWaInput" placeholder="6281234567890" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-4 py-2.5 text-sm text-white outline-none">
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Nomor WA Admin (Awalan 62):</label>
+                    <input type="text" id="adminWaInput" placeholder="6281234567890" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-3.5 py-2.5 text-sm text-white font-mono outline-none">
                 </div>
-                <button onclick="saveAdminWa()" class="w-full py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-sm font-semibold transition shadow-md">
-                    Simpan Pengaturan
+                <button onclick="saveAdminWa()" class="w-full py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold transition shadow-lg">
+                    Simpan Nomor WhatsApp
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- JavaScript Data & Logic -->
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed top-20 right-4 z-50 transform translate-x-[150%] transition-transform duration-300 bg-slate-900 border border-emerald-500/40 text-white px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2.5 text-xs font-semibold">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
+        <span id="toastText">Berhasil disimpan!</span>
+    </div>
+
+    <!-- Application Logic & Rich SVG Visual Catalog -->
     <script>
-        // Database Produk ARSTORE (SMM & Akun Digital)
-        const products = [
+        // Default Admin WhatsApp Number (Ganti nomor default di sini jika ingin permanen untuk semua pengunjung)
+        let adminWaNumber = localStorage.getItem('ARSTORE_WA_NUMBER') || '6281234567890';
+
+        function syncWaDisplay() {
+            document.getElementById('adminWaInput').value = adminWaNumber;
+            const formatted = '+' + adminWaNumber.replace(/(\d{2})(\d{3})(\d{4})(\d+)/, '$1 $2-$3-$4');
+            document.getElementById('footerWaDisplay').textContent = formatted;
+        }
+        syncWaDisplay();
+
+        // Helper untuk membuat ilustrasi SVG visual menarik di bagian atas setiap kartu
+        function createPlatformArtworkSVG(primaryColor, secondaryColor, accentColor, labelText) {
+            return `
+                <svg viewBox="0 0 400 150" class="w-full h-full object-cover" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="grad-${labelText.replace(/[^a-zA-Z0-9]/g, '')}" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="${primaryColor}" />
+                            <stop offset="100%" stop-color="${secondaryColor}" />
+                        </linearGradient>
+                        <pattern id="grid-${labelText.replace(/[^a-zA-Z0-9]/g, '')}" width="24" height="24" patternUnits="userSpaceOnUse">
+                            <path d="M 24 0 L 0 0 0 24" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                        </pattern>
+                    </defs>
+                    <rect width="400" height="150" fill="url(#grad-${labelText.replace(/[^a-zA-Z0-9]/g, '')})" />
+                    <rect width="400" height="150" fill="url(#grid-${labelText.replace(/[^a-zA-Z0-9]/g, '')})" />
+                    <circle cx="340" cy="25" r="75" fill="${accentColor}" fill-opacity="0.22" />
+                    <circle cx="50" cy="135" r="55" fill="#ffffff" fill-opacity="0.08" />
+                    <text x="382" y="136" text-anchor="end" fill="rgba(255,255,255,0.16)" font-family="Plus Jakarta Sans, sans-serif" font-weight="900" font-size="34" letter-spacing="2">${labelText.toUpperCase()}</text>
+                </svg>
+            `;
+        }
+
+        // Lengkap 13 Platform Sesuai Permintaan User
+        const catalogItems = [
             {
-                id: 1,
-                name: "Instagram Followers Aktif / Indo",
-                category: "smm",
-                platform: "Instagram",
-                icon: "fa-brands fa-instagram",
-                badge: "Terlaris 🔥",
-                desc: "Followers berkualitas tinggi dengan garansi refill 100% anti drop.",
-                pricePerUnit: 50,
-                unitName: "Followers",
-                options: [
-                    { qty: 500, label: "500 Followers", price: 25000 },
-                    { qty: 1000, label: "1.000 Followers", price: 45000 },
-                    { qty: 2500, label: "2.500 Followers", price: 100000 },
-                    { qty: 5000, label: "5.000 Followers", price: 180000 }
+                id: 'instagram',
+                platform: 'Instagram',
+                category: 'sosmed',
+                title: 'Jasa Followers, Likes, Views & Akun Instagram',
+                badge: 'Terlaris 🔥',
+                icon: 'fa-brands fa-instagram',
+                colors: ['#833ab4', '#fd1d1d', '#fcb045'],
+                bannerGradient: 'from-purple-600 via-pink-600 to-amber-500',
+                targetPlaceholder: 'Contoh: @username_ig atau https://instagram.com/p/xxx',
+                targetLabel: 'Username / Link Postingan IG:',
+                features: [
+                    'Followers Aktif Indonesia & Mix High Quality',
+                    'Likes, Views Reels & Komentar Instan',
+                    'Akun Instagram Old (2018-2022) Siap Pakai'
+                ],
+                packages: [
+                    { name: '500 Followers Instagram Real Mix (Garansi 30 Hari)', price: 15000 },
+                    { name: '1.000 Followers Instagram Real Indonesia (Garansi)', price: 45000 },
+                    { name: '1.000 Likes Postingan / Reels Instagram Fast', price: 10000 },
+                    { name: '10.000 Views Reels Instagram FYP Booster', price: 15000 },
+                    { name: '1x Akun Instagram Old (2018-2021) Full Access Email', price: 65000 }
                 ]
             },
             {
-                id: 2,
-                name: "Instagram Likes & Views Real",
-                category: "smm",
-                platform: "Instagram",
-                icon: "fa-solid fa-heart",
-                badge: "Fast Proc",
-                desc: "Tambah likes atau views postingan / reels Instagram dengan instan.",
-                pricePerUnit: 20,
-                unitName: "Likes/Views",
-                options: [
-                    { qty: 1000, label: "1.000 Likes / Views", price: 15000 },
-                    { qty: 5000, label: "5.000 Likes / Views", price: 60000 },
-                    { qty: 10000, label: "10.000 Likes / Views", price: 100000 }
+                id: 'youtube',
+                platform: 'YouTube',
+                category: 'hiburan',
+                title: 'Subscribers, 4.000 Jam Tayang & Views YouTube',
+                badge: 'Monetize Ready',
+                icon: 'fa-brands fa-youtube',
+                colors: ['#dc2626', '#7f1d1d', '#fca5a5'],
+                bannerGradient: 'from-red-600 to-rose-900',
+                targetPlaceholder: 'Contoh: https://youtube.com/@namachannel',
+                targetLabel: 'Link Channel / Video YouTube:',
+                features: [
+                    'Subscribers Permanen Garansi Refill 30 Hari',
+                    'Paket 4.000 Jam Tayang Lolos Monetisasi',
+                    'Views High Retention & Likes Video'
+                ],
+                packages: [
+                    { name: '100 Subscribers YouTube Permanen (Garansi)', price: 35000 },
+                    { name: '1.000 Subscribers YouTube Monetisasi (Garansi 30D)', price: 280000 },
+                    { name: '1.000 Jam Tayang YouTube Organik', price: 135000 },
+                    { name: '4.000 Jam Tayang YouTube Full Paket Monetisasi', price: 450000 },
+                    { name: '1.000 Views + Bonus Likes Video YouTube', price: 30000 }
                 ]
             },
             {
-                id: 3,
-                name: "TikTok Followers & Likes",
-                category: "smm",
-                platform: "TikTok",
-                icon: "fa-brands fa-tiktok",
-                badge: "Promo",
-                desc: "Dongkrak popularitas akun TikTok kamu agar cepat FYP dan live streaming.",
-                pricePerUnit: 45,
-                unitName: "Followers",
-                options: [
-                    { qty: 500, label: "500 Followers TikTok", price: 30000 },
-                    { qty: 1000, label: "1.000 Followers TikTok", price: 55000 },
-                    { qty: 5000, label: "5.000 Followers TikTok", price: 240000 }
+                id: 'tiktok',
+                platform: 'TikTok',
+                category: 'sosmed',
+                title: 'Followers TikTok Live, Views FYP & Akun Siap Shop',
+                badge: 'FYP Booster ⚡',
+                icon: 'fa-brands fa-tiktok',
+                colors: ['#0f172a', '#be185d', '#06b6d4'],
+                bannerGradient: 'from-slate-900 via-pink-700 to-cyan-600',
+                targetPlaceholder: 'Contoh: @username_tiktok atau link video TikTok',
+                targetLabel: 'Username / Link Video TikTok:',
+                features: [
+                    '1.000 Followers Buka Fitur Live & Affiliate Shop',
+                    'Views & Likes FYP Masuk Hitungan Menit',
+                    'Tersedia Akun TikTok 1K+ Follower Siap Live'
+                ],
+                packages: [
+                    { name: '500 Followers TikTok Permanen', price: 30000 },
+                    { name: '1.000 Followers TikTok Permanen (Bisa Live)', price: 55000 },
+                    { name: '10.000 Views Video TikTok Instant FYP', price: 12000 },
+                    { name: '1.000 Likes Video TikTok High Quality', price: 15000 },
+                    { name: '1x Akun TikTok 1.000+ Followers Siap Live & Shop', price: 120000 }
                 ]
             },
             {
-                id: 4,
-                name: "TikTok Views & Shares No Refill",
-                category: "smm",
-                platform: "TikTok",
-                icon: "fa-solid fa-eye",
-                badge: "Hemat ⚡",
-                desc: "Layanan views cepat tanpa garansi isi ulang (harga super hemat).",
-                pricePerUnit: 5,
-                unitName: "Views",
-                options: [
-                    { qty: 5000, label: "5.000 Views (No Refill)", price: 10000 },
-                    { qty: 10000, label: "10.000 Views (No Refill)", price: 18000 },
-                    { qty: 50000, label: "50.000 Views (No Refill)", price: 75000 }
+                id: 'whatsapp',
+                platform: 'WhatsApp',
+                category: 'pesan',
+                title: 'Anggota Saluran WA, Nomor Virtual OTP & Jasa Blast',
+                badge: 'Bisnis & OTP',
+                icon: 'fa-brands fa-whatsapp',
+                colors: ['#059669', '#064e3b', '#6ee7b7'],
+                bannerGradient: 'from-emerald-600 to-teal-900',
+                targetPlaceholder: 'Contoh: Link Saluran WA atau Ketik Negara Nomor OTP',
+                targetLabel: 'Link Saluran WA / Kebutuhan:',
+                features: [
+                    'Tambah Pengikut Saluran (Channel) WhatsApp',
+                    'Nomor Virtual Verifikasi OTP WA (Indo & Luar)',
+                    'Setup Auto-Reply / Bot WhatsApp Bisnis'
+                ],
+                packages: [
+                    { name: '500 Pengikut Saluran (Channel) WhatsApp', price: 35000 },
+                    { name: '1.000 Pengikut Saluran (Channel) WhatsApp', price: 60000 },
+                    { name: '1x Nomor Virtual OTP WhatsApp (Garansi Masuk)', price: 25000 },
+                    { name: 'Jasa Setup Bot Auto-Reply WhatsApp Bisnis', price: 50000 }
                 ]
             },
             {
-                id: 5,
-                name: "YouTube Subscribers & Watchtime",
-                category: "smm",
-                platform: "YouTube",
-                icon: "fa-brands fa-youtube",
-                badge: "Monetize Ready",
-                desc: "Bantu syarat monetisasi channel YouTube dengan aman dan stabil.",
-                pricePerUnit: 500,
-                unitName: "Subscribers",
-                options: [
-                    { qty: 100, label: "100 Subscribers", price: 75000 },
-                    { qty: 500, label: "500 Subscribers", price: 350000 },
-                    { qty: 1000, label: "1.000 Subscribers", price: 650000 }
+                id: 'telegram',
+                platform: 'Telegram',
+                category: 'pesan',
+                title: 'Member Channel / Group, Post Views & Akun Telegram',
+                badge: 'Instant Add',
+                icon: 'fa-brands fa-telegram',
+                colors: ['#0284c7', '#1e3a8a', '#7dd3fc'],
+                bannerGradient: 'from-sky-500 to-blue-800',
+                targetPlaceholder: 'Contoh: https://t.me/usernamechannel',
+                targetLabel: 'Link Channel / Grup Telegram:',
+                features: [
+                    'Member Aktif / Mix untuk Channel & Grup Publik',
+                    'Post Views & Reactions Telegram Otomatis',
+                    'Akun Telegram Ready & Nomor OTP Telegram'
+                ],
+                packages: [
+                    { name: '500 Member Channel / Grup Telegram', price: 22000 },
+                    { name: '1.000 Member Channel / Grup Telegram (Garansi)', price: 40000 },
+                    { name: '5.000 Views Postingan Channel Telegram', price: 15000 },
+                    { name: '1x Akun Telegram Siap Pakai (Tdata / OTP)', price: 30000 }
                 ]
             },
             {
-                id: 6,
-                name: "WhatsApp Bot / WA Blast / Jasa",
-                category: "marketplace",
-                platform: "WhatsApp",
-                icon: "fa-brands fa-whatsapp",
-                badge: "Bisnis",
-                desc: "Jasa optimasi WhatsApp bisnis, broadcast, dan setup bot otomatis.",
-                pricePerUnit: 50000,
-                unitName: "Paket",
-                options: [
-                    { qty: 1, label: "Setup Bot WhatsApp Basic", price: 50000 },
-                    { qty: 1, label: "Jasa Broadcast / WA Blast 1k Target", price: 75000 }
+                id: 'shopee-tokopedia',
+                platform: 'Shopee / Tokopedia',
+                category: 'marketplace',
+                title: 'Followers Toko, Favorit Produk & Akun Marketplace',
+                badge: 'Trusted Shop',
+                icon: 'fa-solid fa-bag-shopping',
+                colors: ['#ea580c', '#16a34a', '#fde047'],
+                bannerGradient: 'from-orange-500 via-amber-600 to-emerald-600',
+                targetPlaceholder: 'Contoh: https://shopee.co.id/namatoko',
+                targetLabel: 'Link Toko / Produk Marketplace:',
+                features: [
+                    'Followers Toko Shopee & Tokopedia Real Indo',
+                    'Tambah Wishlist / Favorit Produk Naik Pencarian',
+                    'Akun Marketplace Siap Pakai / Seller'
+                ],
+                packages: [
+                    { name: '1.000 Followers Toko Shopee Real', price: 35000 },
+                    { name: '1.000 Followers Toko Tokopedia Real', price: 35000 },
+                    { name: '1.000 Favorit / Love Produk Shopee', price: 25000 },
+                    { name: '1x Akun Shopee / Tokopedia Siap Pakai', price: 75000 }
                 ]
             },
             {
-                id: 7,
-                name: "Telegram Members Channel / Group",
-                category: "smm",
-                platform: "Telegram",
-                icon: "fa-brands fa-telegram",
-                badge: "Aktif",
-                desc: "Tambah anggota member channel atau grup Telegram dengan cepat.",
-                pricePerUnit: 30,
-                unitName: "Member",
-                options: [
-                    { qty: 500, label: "500 Members Telegram", price: 20000 },
-                    { qty: 1000, label: "1.000 Members Telegram", price: 35000 },
-                    { qty: 5000, label: "5.000 Members Telegram", price: 150000 }
+                id: 'spotify',
+                platform: 'Spotify',
+                category: 'hiburan',
+                title: 'Spotify Premium 1-12 Bulan & Jasa Plays / Followers',
+                badge: 'Garansi Full',
+                icon: 'fa-brands fa-spotify',
+                colors: ['#16a34a', '#064e3b', '#86efac'],
+                bannerGradient: 'from-green-500 to-emerald-900',
+                targetPlaceholder: 'Contoh: Email Anda (untuk Akun) atau Link Lagu/Playlist',
+                targetLabel: 'Email Akun / Link Spotify:',
+                features: [
+                    'Akun Spotify Premium Individual / Family Bergaransi',
+                    'Bisa Perpanjang di Akun Lama atau Akun Baru',
+                    'Jasa Spotify Plays & Followers Playlist / Artis'
+                ],
+                packages: [
+                    { name: 'Spotify Premium 1 Bulan Full Garansi', price: 20000 },
+                    { name: 'Spotify Premium 3 Bulan Full Garansi', price: 45000 },
+                    { name: 'Spotify Premium 1 Tahun Full Garansi', price: 95000 },
+                    { name: '1.000 Spotify Music Plays / Followers Playlist', price: 30000 }
                 ]
             },
             {
-                id: 8,
-                name: "Akun Shopee / Tokopedia Siap Pakai",
-                category: "akun",
-                platform: "Shopee",
-                icon: "fa-solid fa-store",
-                badge: "Verified",
-                desc: "Akun marketplace siap pakai untuk belanja atau verifikasi toko online.",
-                pricePerUnit: 25000,
-                unitName: "Akun",
-                options: [
-                    { qty: 1, label: "1 Akun Shopee Verified", price: 25000 },
-                    { qty: 1, label: "1 Akun Tokopedia Verified", price: 30000 }
+                id: 'twitch',
+                platform: 'Twitch',
+                category: 'hiburan',
+                title: 'Followers Twitch Affiliate & Live Stream Viewers',
+                badge: 'Streamer Ready',
+                icon: 'fa-brands fa-twitch',
+                colors: ['#7c3aed', '#3b0764', '#d8b4fe'],
+                bannerGradient: 'from-purple-600 to-indigo-950',
+                targetPlaceholder: 'Contoh: https://twitch.tv/username',
+                targetLabel: 'Link Channel Twitch:',
+                features: [
+                    'Bantu Penuhi Syarat 50+ Followers Twitch Affiliate',
+                    'Followers Stabil & Permanen',
+                    'Tersedia Akun Twitch Siap Streaming'
+                ],
+                packages: [
+                    { name: '100 Followers Twitch (Syarat Affiliate)', price: 20000 },
+                    { name: '500 Followers Twitch High Quality', price: 65000 },
+                    { name: '1.000 Followers Twitch Permanen', price: 115000 }
                 ]
             },
             {
-                id: 9,
-                name: "Spotify & Netflix Premium Akun",
-                category: "akun",
-                platform: "Spotify",
-                icon: "fa-solid fa-music",
-                badge: "Garansi",
-                desc: "Akun streaming premium legal bergaransi full selama masa aktif.",
-                pricePerUnit: 20000,
-                unitName: "Bulan",
-                options: [
-                    { qty: 1, label: "Spotify Premium 1 Bulan", price: 20000 },
-                    { qty: 3, label: "Spotify Premium 3 Bulan", price: 50000 },
-                    { qty: 1, label: "Netflix Premium Shared 1 Bulan", price: 35000 }
+                id: 'pinterest',
+                platform: 'Pinterest',
+                category: 'sosmed',
+                title: 'Followers Pinterest, Repins & Saves Board',
+                badge: 'Traffic Boost',
+                icon: 'fa-brands fa-pinterest',
+                colors: ['#e11d48', '#881337', '#fda4af'],
+                bannerGradient: 'from-rose-600 to-red-900',
+                targetPlaceholder: 'Contoh: https://pinterest.com/username',
+                targetLabel: 'Link Profil / Pin Pinterest:',
+                features: [
+                    'Followers Profil Pinterest Aktif',
+                    'Pin Saves / Repins untuk Naikkan Traffic Website',
+                    'Aman & Proses Cepat Tanpa Password'
+                ],
+                packages: [
+                    { name: '500 Followers Profil Pinterest', price: 22000 },
+                    { name: '1.000 Followers Profil Pinterest', price: 38000 },
+                    { name: '1.000 Pin Saves / Repins Board', price: 30000 }
                 ]
             },
             {
-                id: 10,
-                name: "Twitch Followers & X (Twitter) Followers",
-                category: "smm",
-                platform: "Lainnya",
-                icon: "fa-brands fa-twitch",
-                badge: "Populer",
-                desc: "Layanan SMM khusus Twitch stream dan X / Twitter followers.",
-                pricePerUnit: 40,
-                unitName: "Followers",
-                options: [
-                    { qty: 500, label: "500 Twitch Followers", price: 25000 },
-                    { qty: 500, label: "500 X (Twitter) Followers", price: 30000 }
+                id: 'linkedin',
+                platform: 'LinkedIn',
+                category: 'sosmed',
+                title: 'Koneksi / Followers Profil & Company Page LinkedIn',
+                badge: 'Professional ID',
+                icon: 'fa-brands fa-linkedin',
+                colors: ['#0284c7', '#1e3a8a', '#93c5fd'],
+                bannerGradient: 'from-blue-600 to-sky-900',
+                targetPlaceholder: 'Contoh: https://linkedin.com/in/username',
+                targetLabel: 'Link Profil / Halaman LinkedIn:',
+                features: [
+                    'Followers Profil Profesional & Halaman Perusahaan',
+                    'Meningkatkan Kredibilitas Personal Branding & Bisnis',
+                    'Garansi Refill 30 Hari'
+                ],
+                packages: [
+                    { name: '250 Followers / Koneksi LinkedIn', price: 50000 },
+                    { name: '500 Followers / Koneksi LinkedIn', price: 90000 },
+                    { name: '1.000 Followers Halaman Perusahaan LinkedIn', price: 165000 }
+                ]
+            },
+            {
+                id: 'facebook',
+                platform: 'Facebook',
+                category: 'sosmed',
+                title: 'Followers Fanpage, Likes Postingan & Akun FB Tua',
+                badge: 'Monet & Ads',
+                icon: 'fa-brands fa-facebook',
+                colors: ['#2563eb', '#1e3a8a', '#93c5fd'],
+                bannerGradient: 'from-blue-600 to-indigo-900',
+                targetPlaceholder: 'Contoh: https://facebook.com/namafanpage',
+                targetLabel: 'Link Fanpage / Profil Facebook:',
+                features: [
+                    'Followers & Likes Halaman Fanpage Facebook',
+                    'Views Video / Reels Facebook Monetisasi',
+                    'Akun Facebook Old Siap Pasang Iklan (FB Ads)'
+                ],
+                packages: [
+                    { name: '1.000 Followers + Likes Fanpage Facebook', price: 40000 },
+                    { name: '5.000 Followers Fanpage (Syarat Monetisasi)', price: 175000 },
+                    { name: '1.000 Likes Postingan / Foto Facebook', price: 15000 },
+                    { name: '1x Akun Facebook Old Siap Marketplace & Ads', price: 55000 }
+                ]
+            },
+            {
+                id: 'twitter-x',
+                platform: 'Twitter (X)',
+                category: 'sosmed',
+                title: 'Followers X (Twitter), Retweet, Likes & Views',
+                badge: 'X Viral Boost',
+                icon: 'fa-brands fa-x-twitter',
+                colors: ['#1e293b', '#020617', '#94a3b8'],
+                bannerGradient: 'from-slate-800 to-zinc-950',
+                targetPlaceholder: 'Contoh: @username_x atau link tweet',
+                targetLabel: 'Username / Link Tweet X:',
+                features: [
+                    'Followers X (Twitter) High Quality Non-Drop',
+                    'Retweet, Likes & Impressions Tweet Viral',
+                    'Tersedia Akun X (Twitter) Old Siap Pakai'
+                ],
+                packages: [
+                    { name: '500 Followers X (Twitter) High Quality', price: 28000 },
+                    { name: '1.000 Followers X (Twitter) Garansi Refill', price: 50000 },
+                    { name: '500 Retweet + 500 Likes Tweet', price: 35000 },
+                    { name: '1x Akun X (Twitter) Old Full Access', price: 45000 }
+                ]
+            },
+            {
+                id: 'dan-lainnya',
+                platform: 'Dan Lainnya',
+                category: 'marketplace',
+                title: 'Netflix, Canva Pro, CapCut Pro, Discord & Request',
+                badge: 'All Request ✨',
+                icon: 'fa-solid fa-layer-group',
+                colors: ['#4f46e5', '#0891b2', '#a5f3fc'],
+                bannerGradient: 'from-indigo-600 via-purple-600 to-cyan-600',
+                targetPlaceholder: 'Tuliskan layanan/aplikasi yang kamu butuhkan...',
+                targetLabel: 'Nama Aplikasi / Layanan yang Dicari:',
+                features: [
+                    'Netflix UHD, Disney+, YouTube Premium, Vidio',
+                    'Canva Pro, CapCut Pro, ChatGPT Plus, Scribd',
+                    'Discord Member, Threads, SnackVideo & Custom'
+                ],
+                packages: [
+                    { name: 'Canva Pro Invite / Head 1 Bulan - 1 Tahun', price: 15000 },
+                    { name: 'Netflix Premium 4K UHD 1 Bulan Garansi', price: 35000 },
+                    { name: 'CapCut Pro / YouTube Premium 1 Bulan', price: 25000 },
+                    { name: '500 Member Server Discord Online/Offline', price: 35000 },
+                    { name: 'Request Layanan / Akun Platform Lainnya', price: 20000 }
                 ]
             }
         ];
 
-        let currentFilterCat = 'semua';
-        let currentFilterPlat = 'all';
-        let selectedProduct = null;
+        let selectedCategory = 'all';
+        let selectedPlatform = 'all';
+        let activeOrderItem = null;
 
-        // Default Admin WA number
-        let adminWaNumber = localStorage.getItem('ARSTORE_admin_wa') || '6281234567890';
-        document.getElementById('adminWaInput').value = adminWaNumber;
+        // Render Platform Pills
+        function renderPlatformPills() {
+            const container = document.getElementById('platformPillsContainer');
+            let html = `
+                <span class="text-xs font-bold text-slate-400 whitespace-nowrap mr-1"><i class="fa-solid fa-filter text-brand-400 mr-1"></i>Platform:</span>
+                <button onclick="setPlatform('all')" data-plat="all" class="plat-pill px-3.5 py-1.5 rounded-xl text-xs font-bold bg-brand-600 text-white whitespace-nowrap transition">
+                    Semua (13)
+                </button>
+            `;
+            catalogItems.forEach(item => {
+                html += `
+                    <button onclick="setPlatform('${item.id}')" data-plat="${item.id}" class="plat-pill px-3.5 py-1.5 rounded-xl text-xs font-medium bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 whitespace-nowrap transition flex items-center gap-1.5">
+                        <i class="${item.icon}"></i>
+                        <span>${item.platform}</span>
+                    </button>
+                `;
+            });
+            container.innerHTML = html;
+        }
 
-        function renderProducts() {
+        // Render Product Cards Grid
+        function renderCatalog() {
             const grid = document.getElementById('productGrid');
             const emptyState = document.getElementById('emptyState');
-            const searchVal = document.getElementById('searchInput').value.toLowerCase();
+            const searchQuery = document.getElementById('searchInput').value.toLowerCase().trim();
 
-            grid.innerHTML = '';
-
-            const filtered = products.filter(p => {
-                const matchCat = currentFilterCat === 'semua' || p.category === currentFilterCat;
-                const matchPlat = currentFilterPlat === 'all' || p.platform === currentFilterPlat;
-                const matchSearch = p.name.toLowerCase().includes(searchVal) || p.desc.toLowerCase().includes(searchVal) || p.platform.toLowerCase().includes(searchVal);
+            const filtered = catalogItems.filter(item => {
+                const matchCat = selectedCategory === 'all' || item.category === selectedCategory;
+                const matchPlat = selectedPlatform === 'all' || item.id === selectedPlatform;
+                const matchSearch = 
+                    item.platform.toLowerCase().includes(searchQuery) ||
+                    item.title.toLowerCase().includes(searchQuery) ||
+                    item.features.some(f => f.toLowerCase().includes(searchQuery)) ||
+                    item.packages.some(p => p.name.toLowerCase().includes(searchQuery));
                 return matchCat && matchPlat && matchSearch;
             });
 
+            document.getElementById('totalCountBadge').textContent = catalogItems.length;
+
             if (filtered.length === 0) {
+                grid.innerHTML = '';
                 emptyState.classList.remove('hidden');
                 return;
-            } else {
-                emptyState.classList.add('hidden');
             }
 
-            filtered.forEach(p => {
-                const card = document.createElement('div');
-                card.className = "glass-card rounded-3xl p-6 flex flex-col justify-between hover:border-brand-500/50 transition duration-300 group";
-                card.innerHTML = `
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="https://i.ibb.co.com/cS0PRXKk/image-Photoroom-2.png">
-                                <i class="Rp{p.icon}"></i>
+            emptyState.classList.add('hidden');
+            grid.innerHTML = filtered.map(item => {
+                const minPrice = Math.min(...item.packages.map(p => p.price));
+                const formattedPrice = 'Rp ' + minPrice.toLocaleString('id-ID');
+                const svgBanner = createPlatformArtworkSVG(item.colors[0], item.colors[1], item.colors[2], item.platform);
+
+                return `
+                    <div class="product-card rounded-3xl overflow-hidden flex flex-col justify-between group">
+                        <div>
+                            <!-- Visual SVG Header Image -->
+                            <div class="relative h-36 w-full overflow-hidden">
+                                ${svgBanner}
+                                <!-- Platform Floating Icon -->
+                                <div class="absolute bottom-3 left-4 w-12 h-12 rounded-2xl bg-slate-950/85 backdrop-blur-md border border-white/15 flex items-center justify-center text-white text-2xl shadow-xl group-hover:scale-110 transition-transform">
+                                    <i class="${item.icon}"></i>
+                                </div>
+                                <!-- Top Right Badge -->
+                                <span class="absolute top-3 right-3 px-3 py-1 rounded-full bg-slate-950/75 backdrop-blur-md border border-white/15 text-[11px] font-bold text-white shadow">
+                                    ${item.badge}
+                                </span>
                             </div>
-                            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-brand-900/80 text-brand-300 border border-brand-500/30">
-                                Rp{p.badge}
-                            </span>
+
+                            <!-- Card Body -->
+                            <div class="p-5 pt-4">
+                                <div class="flex items-center justify-between mb-1">
+                                    <span class="text-xs font-extrabold text-brand-400 uppercase tracking-wider">${item.platform}</span>
+                                    <span class="text-[11px] text-slate-400">${item.packages.length} Pilihan Paket</span>
+                                </div>
+                                <h3 class="text-base font-extrabold text-white leading-snug mb-3 group-hover:text-brand-300 transition-colors">
+                                    ${item.title}
+                                </h3>
+
+                                <ul class="space-y-1.5 text-xs text-slate-300 mb-4">
+                                    ${item.features.map(feat => `
+                                        <li class="flex items-start gap-2">
+                                            <i class="fa-solid fa-circle-check text-emerald-400 text-xs mt-0.5 flex-shrink-0"></i>
+                                            <span class="line-clamp-2">${feat}</span>
+                                        </li>
+                                    `).join('')}
+                                </ul>
+                            </div>
                         </div>
-                        <span class="text-xs text-slate-400 font-medium">Rp{p.platform}</span>
-                        <h3 class="text-lg font-bold text-white mt-0.5 mb-2">Rp{p.name}</h3>
-                        <p class="text-xs text-slate-400 leading-relaxed mb-6">Rp{p.desc}</p>
-                    </div>
-                    <div>
-                        <div class="flex items-center justify-between mb-4 pt-4 border-t border-slate-800/80">
-                            <span class="text-xs text-slate-500 font-medium">Mulai dari</span>
-                            <span class="text-base font-extrabold text-brand-400">Rp.10.000 / 5.000.000</span>
+
+                        <!-- Card Footer & Direct WA Button -->
+                        <div class="px-5 pb-5 pt-3 border-t border-slate-800/80">
+                            <div class="flex items-baseline justify-between mb-3">
+                                <span class="text-[11px] text-slate-400">Mulai dari</span>
+                                <span class="text-lg font-black text-emerald-400">${formattedPrice}</span>
+                            </div>
+
+                            <button 
+                                onclick="openOrderModal('${item.id}')" 
+                                class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-extrabold text-xs transition glow-wa flex items-center justify-center gap-2 cursor-pointer"
+                            >
+                                <i class="fa-brands fa-whatsapp text-base"></i>
+                                <span>Pesan ${item.platform} via WA</span>
+                            </button>
                         </div>
-                        <button onclick="openOrderModal(Rp{p.id})" class="w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-xs transition shadow-lg shadow-brand-600/20 flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-cart-plus"></i> Order / Beli Sekarang
-                        </button>
                     </div>
                 `;
-                grid.appendChild(card);
-            });
+            }).join('');
         }
 
-        function filterCategory(cat) {
-            currentFilterCat = cat;
+        function setCategory(cat) {
+            selectedCategory = cat;
             document.querySelectorAll('.cat-btn').forEach(btn => {
-                btn.className = "cat-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-slate-900 text-slate-400 hover:text-white border border-slate-800 transition whitespace-nowrap";
+                btn.className = 'cat-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 text-slate-400 hover:text-white border border-slate-800 whitespace-nowrap transition';
             });
-            event.target.className = "cat-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-brand-600 text-white transition shadow-md shadow-brand-600/30 whitespace-nowrap";
-            renderProducts();
+            const activeBtn = document.getElementById('cat-' + cat);
+            if (activeBtn) {
+                activeBtn.className = 'cat-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-brand-600 text-white shadow-lg shadow-brand-600/30 whitespace-nowrap transition';
+            }
+            renderCatalog();
         }
 
-        function filterPlatform(plat) {
-            currentFilterPlat = plat;
-            document.querySelectorAll('.plat-btn').forEach(btn => {
-                btn.className = "plat-btn px-3 py-1.5 rounded-lg bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800 transition";
+        function setPlatform(platId) {
+            selectedPlatform = platId;
+            document.querySelectorAll('.plat-pill').forEach(pill => {
+                if (pill.getAttribute('data-plat') === platId) {
+                    pill.className = 'plat-pill px-3.5 py-1.5 rounded-xl text-xs font-bold bg-brand-600 text-white whitespace-nowrap transition flex items-center gap-1.5';
+                } else {
+                    pill.className = 'plat-pill px-3.5 py-1.5 rounded-xl text-xs font-medium bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 whitespace-nowrap transition flex items-center gap-1.5';
+                }
             });
-            event.target.className = "plat-btn px-3 py-1.5 rounded-lg bg-brand-500 text-white font-medium transition";
-            renderProducts();
+            renderCatalog();
         }
 
-        function filterProducts() {
-            renderProducts();
+        function applyFilters() {
+            renderCatalog();
         }
 
-        function openOrderModal(productId) {
-            selectedProduct = products.find(p => p.id === productId);
-            if (!selectedProduct) return;
+        // Order Modal Functions
+        function openOrderModal(itemId) {
+            activeOrderItem = catalogItems.find(i => i.id === itemId);
+            if (!activeOrderItem) return;
 
-            document.getElementById('modalIcon').className = `w-12 h-12 rounded-2xl bg-brand-600/20 text-brand-400 flex items-center justify-center text-xl Rp{selectedProduct.icon}`;
-            document.getElementById('modalCategory').innerText = `Rp{selectedProduct.platform} • Rp{selectedProduct.badge}`;
-            document.getElementById('modalTitle').innerText = selectedProduct.name;
+            const banner = document.getElementById('modalBannerHeader');
+            banner.className = `h-28 relative flex items-center px-6 bg-gradient-to-r ${activeOrderItem.bannerGradient}`;
 
-            const select = document.getElementById('quantitySelect');
-            select.innerHTML = '';
-            selectedProduct.options.forEach((opt, idx) => {
-                const optEl = document.createElement('option');
-                optEl.value = idx;
-                optEl.innerText = `Rp{opt.label} — Rp Rp{opt.price.toLocaleString('id-ID')}`;
-                select.appendChild(optEl);
-            });
-
+            document.getElementById('modalPlatformIcon').className = activeOrderItem.icon;
+            document.getElementById('modalPlatformBadge').textContent = activeOrderItem.platform;
+            document.getElementById('modalServiceTitle').textContent = activeOrderItem.title;
+            document.getElementById('targetFieldLabel').innerHTML = `${activeOrderItem.targetLabel} <span class="text-rose-400">*</span>`;
+            document.getElementById('targetInput').placeholder = activeOrderItem.targetPlaceholder;
             document.getElementById('targetInput').value = '';
             document.getElementById('noteInput').value = '';
-            updateTotalPrice();
+
+            const select = document.getElementById('packageSelect');
+            select.innerHTML = activeOrderItem.packages.map((pkg, idx) => `
+                <option value="${idx}">${pkg.name} — Rp ${pkg.price.toLocaleString('id-ID')}</option>
+            `).join('');
+
+            updateModalPrice();
 
             const modal = document.getElementById('orderModal');
             modal.classList.remove('hidden');
@@ -546,38 +838,48 @@
             const modal = document.getElementById('orderModal');
             modal.classList.add('hidden');
             modal.classList.remove('flex');
+            activeOrderItem = null;
         }
 
-        function updateTotalPrice() {
-            if (!selectedProduct) return;
-            const optIndex = document.getElementById('quantitySelect').value;
-            const selectedOpt = selectedProduct.options[optIndex];
-            document.getElementById('modalPriceText').innerText = `Rp Rp{selectedOpt.price.toLocaleString('id-ID')}`;
-            document.getElementById('totalPriceDisplay').innerText = `Rp Rp{selectedOpt.price.toLocaleString('id-ID')}`;
+        function updateModalPrice() {
+            if (!activeOrderItem) return;
+            const idx = document.getElementById('packageSelect').value;
+            const pkg = activeOrderItem.packages[idx];
+            document.getElementById('modalTotalPrice').textContent = 'Rp ' + pkg.price.toLocaleString('id-ID');
         }
 
-        function submitOrder(e) {
+        function submitOrderToWA(e) {
             e.preventDefault();
-            const target = document.getElementById('targetInput').value;
-            const optIndex = document.getElementById('quantitySelect').value;
-            const selectedOpt = selectedProduct.options[optIndex];
-            const note = document.getElementById('noteInput').value || '-';
+            if (!activeOrderItem) return;
 
-            const message = `Halo Kak, saya ingin memesan layanan di ARSTORE:%0A%0A` +
-                            `📦 *Layanan:* Rp{selectedProduct.name}%0A` +
-                            `🏷️ *Platform:* Rp{selectedProduct.platform}%0A` +
-                            `🎯 *Target (User/Link):* Rp{target}%0A` +
-                            `📊 *Paket:* Rp{selectedOpt.label}%0A` +
-                            `💰 *Total Harga:* Rp Rp{selectedOpt.price.toLocaleString('id-ID')}%0A` +
-                            `📝 *Catatan:* Rp{note}%0A%0A` +
-                            `Mohon informasi pembayaran selanjutnya ya kak. Terima kasih!`;
+            const idx = document.getElementById('packageSelect').value;
+            const pkg = activeOrderItem.packages[idx];
+            const target = document.getElementById('targetInput').value.trim();
+            const note = document.getElementById('noteInput').value.trim();
 
-            const currentWa = localStorage.getItem('ARSTORE_admin_wa') || adminWaNumber;
-            window.open(`https://wa.me/Rp{currentWa}?text=Rp{message}`, '_blank');
+            const message = 
+`Halo Admin *ARSTORE*, saya mau order layanan berikut:
+
+🌐 *Platform:* ${activeOrderItem.platform}
+📦 *Paket:* ${pkg.name}
+🎯 *Target (User/Link):* ${target}
+💰 *Estimasi Harga:* Rp ${pkg.price.toLocaleString('id-ID')}${note ? `\n📝 *Catatan:* ${note}` : ''}
+
+Mohon info pembayaran (QRIS / E-Wallet / Transfer) agar segera diproses. Terima kasih!`;
+
+            const waUrl = `https://wa.me/${adminWaNumber}?text=${encodeURIComponent(message)}`;
+            window.open(waUrl, '_blank');
             closeOrderModal();
         }
 
+        function chatAdminDirect(customText) {
+            const waUrl = `https://wa.me/${adminWaNumber}?text=${encodeURIComponent(customText)}`;
+            window.open(waUrl, '_blank');
+        }
+
+        // Admin Settings Modal
         function openAdminModal() {
+            document.getElementById('adminWaInput').value = adminWaNumber;
             const modal = document.getElementById('adminModal');
             modal.classList.remove('hidden');
             modal.classList.add('flex');
@@ -590,18 +892,38 @@
         }
 
         function saveAdminWa() {
-            const val = document.getElementById('adminWaInput').value.trim();
-            if (val) {
-                adminWaNumber = val;
-                localStorage.setItem('ARSTORE_admin_wa', val);
-                alert('Nomor WhatsApp admin berhasil disimpan!');
-                closeAdminModal();
-            } else {
-                alert('Nomor WhatsApp tidak boleh kosong.');
+            const raw = document.getElementById('adminWaInput').value.replace(/[^0-9]/g, '');
+            if (raw.length < 9) {
+                showToast('Masukkan nomor WhatsApp valid (contoh: 6281234567890)');
+                return;
             }
+            adminWaNumber = raw;
+            localStorage.setItem('ARSTORE_WA_NUMBER', raw);
+            syncWaDisplay();
+            closeAdminModal();
+            showToast('Nomor WhatsApp Admin berhasil disimpan!');
         }
 
-        renderProducts();
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastText').textContent = msg;
+            toast.classList.remove('translate-x-[150%]');
+            setTimeout(() => {
+                toast.classList.add('translate-x-[150%]');
+            }, 3000);
+        }
+
+        // Escape key handler
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeOrderModal();
+                closeAdminModal();
+            }
+        });
+
+        // Init
+        renderPlatformPills();
+        renderCatalog();
     </script>
 </body>
 </html>
