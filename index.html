@@ -1,698 +1,436 @@
 <!DOCTYPE html>
-<html lang="id" class="dark scroll-smooth">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0b0a10">
-    <meta name="description" content="ARSTORE — Katalog Jasa SMM & Akun Digital Terlengkap. Followers, likes, views, akun premium (Netflix, Canva), BM, akun sosmed, dan jasa desain. Harga termurah, proses instan, garansi 100%.">
-    <meta property="og:title" content="Katalog Jasa SMM & Akun Digital Terlengkap — ARSTORE">
-    <meta property="og:description" content="Boost sosial media & akun digital Anda. Proses instan, aman, bergaransi.">
-    <meta property="og:type" content="website">
-    <title>Katalog Jasa SMM & Akun Digital Terlengkap — ARSTORE</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            50: '#f5f3ff', 100: '#ede9fe', 200: '#ddd6fe', 300: '#c4b5fd',
-                            400: '#a78bfa', 500: '#8b5cf6', 600: '#7c3aed', 700: '#6d28d9',
-                            800: '#5b21b6', 900: '#4c1d95', 950: '#2e1065',
-                        },
-                        surface: {
-                            950: '#08070c', 900: '#0b0a10', 850: '#0f0e16',
-                            800: '#12111a', 700: '#1a1925', 600: '#252434',
-                        }
-                    },
-                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
-                    boxShadow: {
-                        'glow': '0 0 40px -10px rgba(139, 92, 246, 0.5)',
-                        'glow-lg': '0 0 60px -15px rgba(139, 92, 246, 0.6)',
-                    },
-                    animation: { 'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite' }
-                }
-            }
-        }
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        html { -webkit-tap-highlight-color: transparent; }
-        body { font-family: 'Inter', sans-serif; }
-        ::-webkit-scrollbar { width: 8px; height: 8px; }
-        ::-webkit-scrollbar-track { background: #0b0a10; }
-        ::-webkit-scrollbar-thumb { background: #4c1d95; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #7c3aed; }
-        ::selection { background: #7c3aed; color: #fff; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arstore — Jual Beli Akun & Jasa Sosmed</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: #0a0a0f;
+    color: #e8e8f0;
+    line-height: 1.6;
+    padding-bottom: 90px; /* ruang untuk tombol floating */
+  }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 2px solid #e94560;
+  }
+  .header h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #e94560, #ff6b6b, #feca57);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 2px;
+  }
+  .header p { color: #9a9ab0; margin-top: 8px; font-size: 1.05rem; }
+  .badge {
+    display: inline-block; background: #e94560; color: #fff;
+    padding: 4px 14px; border-radius: 20px; font-size: 0.8rem;
+    margin-top: 12px; font-weight: 600;
+  }
+
+  /* INFO BANNER */
+  .info-banner {
+    background: #1e1e30; border-left: 4px solid #feca57;
+    margin: 20px auto; max-width: 900px; padding: 16px 20px;
+    border-radius: 0 8px 8px 0; font-size: 0.95rem; color: #ccc;
+  }
+  .info-banner strong { color: #feca57; }
+
+  /* CONTAINER */
+  .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+
+  /* SECTION TITLE */
+  .section-title {
+    font-size: 1.5rem; font-weight: 700; margin: 40px 0 20px;
+    padding-bottom: 10px; border-bottom: 2px solid #2a2a40;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-title .icon { font-size: 1.6rem; }
+
+  /* GRID */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+
+  /* CARD */
+  .card {
+    background: linear-gradient(145deg, #1a1a2e, #1f1f35);
+    border-radius: 12px; padding: 20px;
+    border: 1px solid #2a2a40;
+    transition: transform 0.2s, border-color 0.2s;
+    position: relative;
+  }
+  .card:hover { transform: translateY(-3px); border-color: #e94560; }
+  .card h3 { font-size: 1.1rem; color: #fff; margin-bottom: 4px; }
+  .card .price {
+    font-size: 1.4rem; font-weight: 800; color: #feca57; margin: 8px 0;
+  }
+  .card .price small { font-size: 0.75rem; color: #888; font-weight: 400; }
+  .card .desc { font-size: 0.85rem; color: #9a9ab0; margin-bottom: 12px; }
+  .card .status {
+    display: inline-block; padding: 3px 10px; border-radius: 12px;
+    font-size: 0.75rem; font-weight: 600;
+  }
+  .status.ready { background: #1a3a2a; color: #4ade80; }
+  .status.sold { background: #3a1a1a; color: #f87171; }
+  .status.hot { background: #3a2a1a; color: #fb923c; }
+
+  /* BUTTON */
+  .btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #e94560, #ff6b6b);
+    color: #fff; padding: 10px 22px; border-radius: 8px;
+    text-decoration: none; font-weight: 600; font-size: 0.9rem;
+    margin-top: 10px; transition: opacity 0.2s; border: none; cursor: pointer;
+  }
+  .btn:hover { opacity: 0.85; }
+  .btn.sold-out { background: #333; color: #777; cursor: not-allowed; }
+
+  /* PLATFORM GRID */
+  .platform-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+  }
+  .platform-item {
+    background: #1a1a2e; border: 1px solid #2a2a40;
+    border-radius: 10px; padding: 14px; text-align: center;
+    font-size: 0.85rem; color: #ccc; transition: border-color 0.2s;
+  }
+  .platform-item:hover { border-color: #e94560; }
+  .platform-item .p-icon { font-size: 1.5rem; display: block; margin-bottom: 4px; }
+
+  /* NOTE */
+  .note {
+    background: #2a1a1a; border: 1px solid #e94560;
+    border-radius: 8px; padding: 16px; margin: 20px 0;
+    font-size: 0.9rem; color: #ffb3b3;
+  }
+  .note strong { color: #e94560; }
+
+  /* KONTAK CTA */
+  .contact-cta {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border: 1px solid #e94560;
+    border-radius: 12px;
+    padding: 28px 20px;
+    text-align: center;
+    margin: 40px 0;
+  }
+  .contact-cta h2 { color: #feca57; font-size: 1.4rem; margin-bottom: 8px; }
+  .contact-cta p { color: #9a9ab0; font-size: 0.95rem; margin-bottom: 16px; }
+  .contact-cta .wa-number {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 12px 0;
+    letter-spacing: 1px;
+  }
+
+  /* FOOTER */
+  .footer {
+    text-align: center; padding: 40px 20px; margin-top: 40px;
+    border-top: 1px solid #2a2a40; color: #666; font-size: 0.85rem;
+  }
+
+  /* FLOATING WHATSAPP */
+  .wa-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+    z-index: 999;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: pulse 2s infinite;
+  }
+  .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 22px rgba(37, 211, 102, 0.6); }
+  .wa-float svg { width: 32px; height: 32px; fill: #fff; }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4); }
+    50% { box-shadow: 0 4px 24px rgba(37, 211, 102, 0.8); }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .header h1 { font-size: 1.8rem; }
+    .section-title { font-size: 1.2rem; }
+    .wa-float { width: 54px; height: 54px; bottom: 18px; right: 18px; }
+    .wa-float svg { width: 28px; height: 28px; }
+  }
+</style>
 </head>
-<body class="bg-surface-900 text-gray-200 antialiased selection:bg-brand-600 selection:text-white">
+<body>
 
-    <!-- Navbar -->
-    <nav class="sticky top-0 z-50 backdrop-blur-xl bg-surface-900/85 border-b border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-            <a href="#" class="flex items-center gap-2.5">
-                <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center shadow-lg shadow-brand-700/40">
-                    <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                </div>
-                <span class="text-lg font-extrabold tracking-tight text-white">AR<span class="text-brand-400">STORE</span></span>
-            </a>
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
-                <a href="#katalog" class="hover:text-white transition-colors">Katalog</a>
-                <a href="#layanan" class="hover:text-white transition-colors">Layanan</a>
-                <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
-                <a href="#kontak" class="hover:text-white transition-colors">Kontak</a>
-            </div>
-            <a href="https://wa.me/6283875839287" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-500 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-all shadow-lg shadow-brand-600/30 hover:shadow-brand-600/50 active:scale-[0.98]">
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-                <span class="hidden sm:inline">Pesan</span>
-            </a>
-        </div>
-    </nav>
+<!-- HEADER -->
+<div class="header">
+  <h1>ARSTORE</h1>
+  <p>Jual Beli Akun FB & TikTok • Jasa Followers & Tayangan</p>
+  <span class="badge">⚡ Proses Cepat • Amanah • Harga Terjangkau</span>
+</div>
 
-    <!-- Hero -->
-    <header class="relative overflow-hidden">
-        <div class="absolute inset-0 pointer-events-none">
-            <div class="absolute -top-40 -right-40 w-[600px] h-[600px] bg-brand-600/25 rounded-full blur-3xl"></div>
-            <div class="absolute top-40 -left-40 w-[500px] h-[500px] bg-purple-500/15 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-brand-500/5 rounded-full blur-3xl"></div>
-        </div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 sm:pt-28 sm:pb-24 text-center">
-            <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 text-xs font-medium text-brand-300 mb-3 backdrop-blur-sm">
-                <span class="relative flex h-2 w-2">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                </span>
-                Semua Layanan Aktif • Proses Instan 24/7
-            </div>
-            <br>
-            <div class="inline-flex items-center gap-1.5 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-4 py-1.5 text-xs font-semibold text-emerald-400 mb-6 backdrop-blur-sm">
-                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-                Tanpa Login • 100% Aman
-            </div>
-            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-[1.05]">
-                Katalog Jasa <span class="bg-gradient-to-r from-brand-400 via-purple-400 to-brand-500 bg-clip-text text-transparent">SMM</span>
-                <br class="hidden sm:block">
-                & Akun Digital <span class="text-brand-400">Terlengkap</span>
-            </h1>
-            <p class="mt-6 max-w-2xl mx-auto text-base sm:text-lg text-gray-400 leading-relaxed">
-                Mau sosmed makin ramai atau butuh akun premium tanpa ribet? Di sini tempatnya! Tersedia jasa tambah eksposur sosial media plus berbagai akun digital seperti Netflix, ChatGPT Premium, Canva, dan lainnya. Proses kilat, aman, bergaransi, dengan harga jujur dan kualitas terjamin.
-            </p>
-            <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-                <a href="#katalog" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-500 text-white font-bold px-8 py-4 rounded-xl transition-all shadow-xl shadow-brand-600/40 hover:shadow-brand-600/60 active:scale-[0.98]">
-                    Lihat Katalog
-                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                    </svg>
-                </a>
-                <a href="https://wa.me/6283875839287" target="_blank" rel="noopener" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold px-8 py-4 rounded-xl transition-all backdrop-blur-sm active:scale-[0.98]">
-                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                    </svg>
-                    Tanya Admin
-                </a>
-            </div>
-            <div class="mt-14 grid grid-cols-3 gap-4 max-w-lg mx-auto">
-                <div class="text-center">
-                    <p class="text-2xl sm:text-3xl font-black text-white">12K+</p>
-                    <p class="text-xs text-gray-500 mt-1">Pesanan Selesai</p>
-                </div>
-                <div class="text-center border-x border-white/10">
-                    <p class="text-2xl sm:text-3xl font-black text-white">9/10</p>
-                    <p class="text-xs text-gray-500 mt-1">Rating Pelanggan</p>
-                </div>
-                <div class="text-center">
-                    <p class="text-2xl sm:text-3xl font-black text-white">24/7</p>
-                    <p class="text-xs text-gray-500 mt-1">Support Aktif</p>
-                </div>
-            </div>
-        </div>
-    </header>
+<div class="container">
 
-    <!-- Katalog Section -->
-    <main id="katalog" class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
-            <div>
-                <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight">Katalog Layanan</h2>
-                <p class="mt-2 text-sm text-gray-400">Pilih layanan yang Anda butuhkan. Semua harga sudah termasuk garansi & proses instan.</p>
-            </div>
-            <div class="flex flex-wrap gap-2">
-                <button class="filter-btn active px-4 py-1.5 rounded-full text-xs font-bold bg-brand-600 text-white shadow-lg shadow-brand-600/30 transition-all" data-filter="all">Semua</button>
-                <button class="filter-btn px-4 py-1.5 rounded-full text-xs font-bold bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10 transition-all" data-filter="smm">SMM Panel</button>
-                <button class="filter-btn px-4 py-1.5 rounded-full text-xs font-bold bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10 transition-all" data-filter="streaming">Streaming</button>
-                <button class="filter-btn px-4 py-1.5 rounded-full text-xs font-bold bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10 transition-all" data-filter="bm">BM & Ads</button>
-                <button class="filter-btn px-4 py-1.5 rounded-full text-xs font-bold bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10 transition-all" data-filter="akun">Akun Sosmed</button>
-                <button class="filter-btn px-4 py-1.5 rounded-full text-xs font-bold bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10 transition-all" data-filter="jasa">Jasa Lainnya</button>
-            </div>
-        </div>
+  <!-- INFO BANNER -->
+  <div class="info-banner">
+    <strong>📢 INFORMASI PENTING BUAT INSTAGRAM FOLLOWERS SAAT INI</strong><br>
+    Harga dapat berubah sewaktu-waktu. Pastikan konfirmasi stok via WhatsApp sebelum order.
+    Kategori Mix Indo & Luar adalah yang paling laris karena tampilan lebih natural.
+  </div>
 
-        <div id="catalog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+  <!-- SECTION 1: JUAL BELI AKUN -->
+  <h2 class="section-title"><span class="icon">🛒</span> Jual Beli Akun</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Akun Facebook</h3>
+      <p class="desc">Akun FB siap pakai, bisa untuk jualan/bisnis.</p>
+      <div class="price">Rp 25.000 <small>/akun</small></div>
+      <span class="status ready">✅ Tersedia</span><br>
+      <a href="https://wa.me/6283875839287?text=Halo%20Arstore%2C%20saya%20mau%20order%20Akun%20Facebook" class="btn">Order via WA</a>
+    </div>
+    <div class="card">
+      <h3>Akun TikTok</h3>
+      <p class="desc">Akun TikTok siap pakai, cocok untuk live/brand.</p>
+      <div class="price">Rp 30.000 <small>/akun</small></div>
+      <span class="status ready">✅ Tersedia</span><br>
+      <a href="https://wa.me/6283875839287?text=Halo%20Arstore%2C%20saya%20mau%20order%20Akun%20TikTok" class="btn">Order via WA</a>
+    </div>
+    <div class="card">
+      <h3>Akun FB + Followers</h3>
+      <p class="desc">Akun FB lama dengan followers organik. Terbatas!</p>
+      <div class="price">Rp 50.000 <small>/akun</small></div>
+      <span class="status hot">🔥 Hampir Habis</span><br>
+      <a href="https://wa.me/6283875839287?text=Halo%20Arstore%2C%20saya%20mau%20order%20Akun%20FB%20%2B%20Followers" class="btn">Order via WA</a>
+    </div>
+  </div>
 
-            <!-- ============ SMM PANEL ============ -->
+  <!-- SECTION 2: KATEGORI A -->
+  <h2 class="section-title"><span class="icon">🌐</span> Kategori A — Followers (Luar/Real)</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>100 Followers</h3>
+      <div class="price">Rp 10.000</div>
+      <span class="status sold">❌ HABIS</span><br>
+      <span class="btn sold-out">Stok Habis</span>
+    </div>
+    <div class="card">
+      <h3>200 Followers</h3>
+      <div class="price">Rp 15.000</div>
+      <span class="status ready">🌐 Tersedia</span><br>
+      <a href="https://wa.me/6283875839287?text=Halo%20Arstore%2C%20saya%20mau%20order%20Followers%20Kategori%20A%20-%20200" class="btn">Order</a>
+    </div>
+    <div class="card">
+      <h3>300 Followers</h3>
+      <div class="price">Rp 17.000</div>
+      <span class="status ready">🌐 Tersedia</span><br>
+      <a href="https://wa.me/6283875839287?text=Halo%20Arstore%2C%20saya%20mau%20order%20Followers%20Kategori%20A%20-%20300" class="btn">Order</a>
+    </div>
+    <div class="card">
+      <h3>500 Followers</h3>
+      <div class="price">Rp 30.000</div>
+      <span class="status ready">🌐 Tersedia</span><br>
+      <a href="https://wa.me/6283875839287?text=Halo%20Arstore%2C%20saya%20mau%20order%20Followers%20Kategori%20A%20-%20500" class="btn">Order</a>
+    </div>
+    <div class="card">
+      <h3>1.000 Followers</h3>
+      <div class="price">Rp 50.000</div>
+      <span class="status ready">🌐 Tersedia</span><br>
+      <a href="https://wa.me/6283875839287?text=Halo%20Arstore%2C%20saya%20mau%20order%20Followers%20Kategori%20A%20-%201000" class="btn">Order</a>
+    </div>
+    <div class="card">
+      <h3>2.000 Followers</h3>
+      <div class="price">Rp 100.000</div>
+      <span class="status ready">🌐 Tersedia</span><br>
+      <a href="https://wa.me/6283875839287?text=Halo%20Arstore%2C%20saya%20mau%20order%20Followers%20Kategori%20A%20-%202000" class="btn">Order</a>
+    </div>
+    <div class="card">
+      <h3>3.000 Followers</h3>
+      <div class="price">Rp 150.000</div>
+      <span class="status ready">🌐 Tersedia</span><br>
+      <a href="https://wa.me/6283875839287?text=Halo%20Arstore%2C%20saya%20mau%20order%20Followers%20Kategori%20A%20-%203000" class="btn">Order</a>
+    </div>
+    <div class="card">
+      <h3>4.000 Followers</h3>
+      <div class="price">Rp 200.000</div>
+      <span class="status ready">🌐 Tersedia</span><br>
+      <a href="https://wa.me/6283875839287?text=Halo%20Arstore%2C%20saya%20mau%20order%20Followers%20Kategori%20A%20-%204000" class="btn">Order</a>
+    </div>
+    <div class="card">
+      <h3>5.000 Followers</h3>
+      <div class="price">Rp 250.000</div>
+      <span class="status ready">🌐 Tersedia</span><br>
+      <a href="https://wa.me/6283875839287?text=Halo%20Arstore%2C%20saya%20mau%20order%20Followers%20Kategori%20A%20-%205000" class="btn">Order</a>
+    </div>
+    <div class="card">
+      <h3>10.000 Followers</h3>
+      <div class="price">Rp 500.000</div>
+      <span class="status ready">🌐 Tersedia</span><br>
+      <a href="https://wa.me/6283875839287?text=Halo%20Arstore%2C%20saya%20mau%20order%20Followers%20Kategori%20A%20-%2010000" class="btn">Order</a>
+    </div>
+  </div>
 
-            <!-- Card: Instagram Followers -->
-            <article class="catalog-card group relative flex flex-col bg-surface-800 border border-white/5 rounded-2xl p-6 hover:border-brand-500/50 hover:bg-surface-700/80 hover:-translate-y-1 hover:shadow-glow transition-all duration-300" data-category="smm">
-                <div class="flex items-start justify-between mb-4">
-                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500/25 to-rose-500/10 border border-pink-500/30 flex items-center justify-center">
-                        <svg class="https://img.magnific.com/premium-vector/purple-gradiend-social-media-logo_197792-1883.jpg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                        </svg>
-                    </div>
-                    <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
-                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Instan
-                    </span>
-                </div>
-                <h3 class="text-lg font-bold text-white mb-1">Instagram Followers</h3>
-                <p class="text-sm text-gray-400 mb-4 leading-relaxed">Follower real & aktif, bergaransi anti-drop. Cocok untuk personal branding.</p>
-                <div class="mt-auto flex items-end justify-between pt-4 border-t border-white/5">
-                    <div>
-                        <p class="text-[10px] text-gray-500 uppercase tracking-wider font-semibold">Mulai dari</p>
-                        <p class="text-xl font-black text-brand-300">Rp 15.000<span class="text-sm font-normal text-gray-500">/100JT/</span></p>
-                    </div>
-                    <a href="https://wa.me/6283875839287?text=Halo%20Admin%2C%20saya%20mau%20pesan%20Instagram%20Followers" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-white/5 hover:bg-brand-600 text-gray-300 hover:text-white text-xs font-bold px-3.5 py-2 rounded-lg transition-all border border-white/10 hover:border-brand-500">
-                        Pesan
-                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
-                    </a>
-                </div>
-            </article>
+  <!-- SECTION 3: KATEGORI B -->
+  <h2 class="section-title"><span class="icon">⭐</span> Kategori B — MIX INDO &amp; LUAR (Paling Laris! 🔥)</h2>
+  <p style="color:#9a9ab0; font-size:0.9rem; margin-bottom:16px;">Tampilan akun jadi terlihat natural. 🎯</p>
+  <div class="grid">
+    <div class="card">
+      <h3>100 Followers</h3>
+      <div class="price">Rp 17.000</div>
+      <span class="status ready">⭐ Tersedia</span><br>
+      <a href="https://wa.me/6283875839287?text=Halo%20Arstore%2C%20saya%20mau%20order%20Followers%20Kategori%20B%20-%20100" class="btn">Order</a>
+    </div>
+    <div class="card">
+      <h3>200 Followers</h3>
+      <div class="price">Rp 30.000</div>
+      <span class="status ready">⭐ Tersedia</span><br>
+      <a href="https://wa.me/6283875839287?text=Halo%20Arstore%2C%20saya%20mau%20order%20Followers%20Kategori%20B%20-%20200" class="btn">Order</a>
+    </div>
+    <div class="card">
+      <h3>350 Followers</h3>
+      <div class="price">Rp 50.000</div>
+      <span class="status ready">⭐ Tersedia</span><br>
+      <a href="https://wa.me/6283875839287?text=Halo%20Arstore%2C%20saya%20mau%20order%20Followers%20Kategori%20B%20-%20350" class="btn">Order</a>
+    </div>
+    <div class="card">
+      <h3>500 Followers</h3>
+      <div class="price">Rp 75.000</div>
+      <span class="status ready">⭐ Tersedia</span><br>
+      <a href="https://wa.me/6283875839287?text=Halo%20Arstore%2C%20saya%20mau%20order%20Followers%20Kategori%20B%20-%20500" class="btn">Order</a>
+    </div>
+    <div class="card">
+      <h3>700 Followers</h3>
+      <div class="price">Rp 100.000</div>
+      <span class="status ready">⭐ Tersedia</span><br>
+      <a href="https://wa.me/6283875839287?text=Halo%20Arstore%2C%20saya%20mau%20order%20Followers%20Kategori%20B%20-%20700" class="btn">Order</a>
+    </div>
+    <div class="card">
+      <h3>1.000 Followers</h3>
+      <div class="price">Rp 150.000</div>
+      <span class="status ready">⭐ Tersedia</span><br>
+      <a href="https://wa.me/6283875839287?text=Halo%20Arstore%2C%20saya%20mau%20order%20Followers%20Kategori%20B%20-%201000" class="btn">Order</a>
+    </div>
+    <div class="card">
+      <h3>2.000 Followers</h3>
+      <div class="price">Rp 300.000</div>
+      <span class="status ready">⭐ Tersedia</span><br>
+      <a href="https://wa.me/6283875839287?text=Halo%20Arstore%2C%20saya%20mau%20order%20Followers%20Kategori%20B%20-%202000" class="btn">Order</a>
+    </div>
+    <div class="card">
+      <h3>3.000 Followers</h3>
+      <div class="price">Rp 450.000</div>
+      <span class="status ready">⭐ Tersedia</span><br>
+      <a href="https://wa.me/6283875839287?text=Halo%20Arstore%2C%20saya%20mau%20order%20Followers%20Kategori%20B%20-%203000" class="btn">Order</a>
+    </div>
+    <div class="card">
+      <h3>5.000 Followers</h3>
+      <div class="price">Rp 750.000</div>
+      <span class="status ready">⭐ Tersedia</span><br>
+      <a href="https://wa.me/6283875839287?text=Halo%20Arstore%2C%20saya%20mau%20order%20Followers%20Kategori%20B%20-%205000" class="btn">Order</a>
+    </div>
+    <div class="card">
+      <h3>10.000 Followers</h3>
+      <div class="price">Chat WA <small>/harga menyusul</small></div>
+      <span class="status hot">🔥 Tanya Harga</span><br>
+      <a href="https://wa.me/6283875839287?text=Halo%20Arstore%2C%20saya%20mau%20tanya%20harga%20Followers%20Kategori%20B%20-%2010000" class="btn">Tanya Harga</a>
+    </div>
+  </div>
 
-            <!-- Card: TikTok Views -->
-            <article class="catalog-card group relative flex flex-col bg-surface-800 border border-white/5 rounded-2xl p-6 hover:border-brand-500/50 hover:bg-surface-700/80 hover:-translate-y-1 hover:shadow-glow transition-all duration-300" data-category="smm">
-                <div class="flex items-start justify-between mb-4">
-                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/25 to-cyan-500/10 border border-blue-500/30 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                        </svg>
-                    </div>
-                    <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-500/15 text-amber-400 border border-amber-500/30">
-                        <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> Populer
-                    </span>
-                </div>
-                <h3 class="text-lg font-bold text-white mb-1">TikTok Views + Likes</h3>
-                <p class="text-sm text-gray-400 mb-4 leading-relaxed">Boost video masuk FYP dengan views & likes berkualitas tinggi.</p>
-                <div class="mt-auto flex items-end justify-between pt-4 border-t border-white/5">
-                    <div>
-                        <p class="text-[10px] text-gray-500 uppercase tracking-wider font-semibold">Mulai dari</p>
-                        <p class="text-xl font-black text-brand-300">Rp 15.000<span class="text-sm font-normal text-gray-500">/100jt</span></p>
-                    </div>
-                    <a href="https://wa.me/6283875839287?text=Halo%20Admin%2C%20saya%20mau%20pesan%20TikTok%20Views%20%2B%20Likes" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-white/5 hover:bg-brand-600 text-gray-300 hover:text-white text-xs font-bold px-3.5 py-2 rounded-lg transition-all border border-white/10 hover:border-brand-500">
-                        Pesan
-                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
-                    </a>
-                </div>
-            </article>
+  <!-- SECTION 4: JASA TAYANGAN -->
+  <h2 class="section-title"><span class="icon">📺</span> Jasa Tayangan</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Tayangan Facebook</h3>
+      <p class="desc">Boost views video/reels FB Anda.</p>
+      <div class="price">Mulai Rp 15.000</div>
+      <span class="status ready">✅ Tersedia</span><br>
+      <a href="https://wa.me/6283875839287?text=Halo%20Arstore%2C%20saya%20mau%20order%20Jasa%20Tayangan%20Facebook" class="btn">Tanya Harga</a>
+    </div>
+    <div class="card">
+      <h3>Tayangan TikTok</h3>
+      <p class="desc">Views video TikTok, cepat & aman.</p>
+      <div class="price">Mulai Rp 10.000</div>
+      <span class="status ready">✅ Tersedia</span><br>
+      <a href="https://wa.me/6283875839287?text=Halo%20Arstore%2C%20saya%20mau%20order%20Jasa%20Tayangan%20TikTok" class="btn">Tanya Harga</a>
+    </div>
+    <div class="card">
+      <h3>YouTube Views / Jam Tayang</h3>
+      <p class="desc">Untuk monetisasi & exposure.</p>
+      <div class="price">Chat WA</div>
+      <span class="status ready">✅ Tersedia</span><br>
+      <a href="https://wa.me/6283875839287?text=Halo%20Arstore%2C%20saya%20mau%20konsultasi%20YouTube%20Views" class="btn">Konsultasi</a>
+    </div>
+  </div>
 
-            <!-- Card: WhatsApp Blast -->
-            <article class="catalog-card group relative flex flex-col bg-surface-800 border border-white/5 rounded-2xl p-6 hover:border-brand-500/50 hover:bg-surface-700/80 hover:-translate-y-1 hover:shadow-glow transition-all duration-300" data-category="smm">
-                <div class="flex items-start justify-between mb-4">
-                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500/25 to-emerald-500/10 border border-green-500/30 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                        </svg>
-                    </div>
-                    <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
-                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Instan
-                    </span>
-                </div>
-                <h3 class="text-lg font-bold text-white mb-1">WhatsApp Blast / Massal</h3>
-                <p class="text-sm text-gray-400 mb-4 leading-relaxed">Kirim pesan massal ke ribuan nomor tanpa save kontak. Aman & cepat.</p>
-                <div class="mt-auto flex items-end justify-between pt-4 border-t border-white/5">
-                    <div>
-                        <p class="text-[10px] text-gray-500 uppercase tracking-wider font-semibold">Mulai dari</p>
-                        <p class="text-xl font-black text-brand-300">Rp 50.000<span class="text-sm font-normal text-gray-500">/1K</span></p>
-                    </div>
-                    <a href="https://wa.me/6283875839287?text=Halo%20Admin%2C%20saya%20mau%20pesan%20WhatsApp%20Blast" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-white/5 hover:bg-brand-600 text-gray-300 hover:text-white text-xs font-bold px-3.5 py-2 rounded-lg transition-all border border-white/10 hover:border-brand-500">
-                        Pesan
-                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
-                    </a>
-                </div>
-            </article>
+  <!-- SECTION 5: PLATFORM LAIN -->
+  <h2 class="section-title"><span class="icon">🌐</span> Platform Lainnya</h2>
+  <div class="platform-grid">
+    <div class="platform-item"><span class="p-icon">📸</span>Instagram</div>
+    <div class="platform-item"><span class="p-icon">▶️</span>YouTube</div>
+    <div class="platform-item"><span class="p-icon">🎮</span>Twitch</div>
+    <div class="platform-item"><span class="p-icon">✈️</span>Telegram</div>
+    <div class="platform-item"><span class="p-icon">💬</span>WhatsApp</div>
+    <div class="platform-item"><span class="p-icon">🛍️</span>Shopee</div>
+    <div class="platform-item"><span class="p-icon">🛒</span>Tokopedia</div>
+    <div class="platform-item"><span class="p-icon">📌</span>Pinterest</div>
+    <div class="platform-item"><span class="p-icon">💼</span>LinkedIn</div>
+    <div class="platform-item"><span class="p-icon">🐦</span>Twitter/X</div>
+    <div class="platform-item"><span class="p-icon">📘</span>Facebook</div>
+    <div class="platform-item"><span class="p-icon">🎵</span>TikTok</div>
+  </div>
 
-            <!-- ============ STREAMING ============ -->
+  <!-- SECTION KONTAK / KENDALA -->
+  <div class="contact-cta">
+    <h2>📞 Order &amp; Kendala</h2>
+    <p>Semua pesanan, pertanyaan, atau kendala — langsung hubungi WhatsApp resmi Arstore:</p>
+    <span class="wa-number">+62 838-7583-9287</span>
+    <a href="https://wa.me/6283875839287?text=Halo%20Arstore%2C%20saya%20ingin%20bertanya" class="btn" style="font-size:1rem; padding:12px 28px;">💬 Chat WhatsApp Sekarang</a>
+  </div>
 
-            <!-- Card: Netflix 1 Bulan -->
-            <article class="catalog-card group relative flex flex-col bg-surface-800 border border-white/5 rounded-2xl p-6 hover:border-brand-500/50 hover:bg-surface-700/80 hover:-translate-y-1 hover:shadow-glow transition-all duration-300" data-category="streaming">
-                <div class="flex items-start justify-between mb-4">
-                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500/25 to-orange-500/10 border border-red-500/30 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                        </svg>
-                    </div>
-                    <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-brand-500/15 text-brand-300 border border-brand-500/30">
-                        <span class="w-1.5 h-1.5 rounded-full bg-brand-400"></span> Premium
-                    </span>
-                </div>
-                <h3 class="text-lg font-bold text-white mb-1">Netflix Premium — 1 Bulan/Mingguan</h3>
-                <p class="text-sm text-gray-400 mb-4 leading-relaxed">Akun sharing 1 user, garansi penuh 5 hari. Full HD & Ultra HD ready.</p>
-                <div class="mt-auto flex items-end justify-between pt-4 border-t border-white/5">
-                    <div>
-                        <p class="text-[10px] text-gray-500 uppercase tracking-wider font-semibold">Harga</p>
-                        <p class="text-xl font-black text-brand-300">Rp 50.000<span class="text-sm font-normal text-gray-500">/bulan/Mingguan</span></p>
-                    </div>
-                    <a href="https://wa.me/6283875839287?text=Halo%20Admin%2C%20saya%20mau%20pesan%20Netflix%20Premium%201%20Bulan" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-white/5 hover:bg-brand-600 text-gray-300 hover:text-white text-xs font-bold px-3.5 py-2 rounded-lg transition-all border border-white/10 hover:border-brand-500">
-                        Pesan
-                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
-                    </a>
-                </div>
-            </article>
+  <!-- NOTE -->
+  <div class="note">
+    <strong>⚠️ Catatan Penting:</strong><br>
+    • Semua transaksi wajib konfirmasi via WhatsApp sebelum transfer.<br>
+    • Harga dapat berubah tanpa pemberitahuan.<br>
+    • Kami tidak bertanggung jawab atas penyalahgunaan akun setelah pembelian.<br>
+    • Jasa followers/tayangan mengikuti kebijakan platform masing-masing.<br>
+    • <strong>Kendala pesanan?</strong> Hubungi <a href="https://wa.me/6283875839287?text=Halo%20Arstore%2C%20saya%20ada%20kendala%20pesanan" style="color:#feca57;">WA +62 838-7583-9287</a>.
+  </div>
 
-            <!-- Card: Netflix 7 Hari -->
-            <article class="catalog-card group relative flex flex-col bg-surface-800 border border-white/5 rounded-2xl p-6 hover:border-brand-500/50 hover:bg-surface-700/80 hover:-translate-y-1 hover:shadow-glow transition-all duration-300" data-category="streaming">
-                <div class="flex items-start justify-between mb-4">
-                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500/25 to-rose-500/10 border border-red-500/30 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                    <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-sky-500/15 text-sky-400 border border-sky-500/30">
-                        <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span> Hemat
-                    </span>
-                </div>
-                <h3 class="text-lg font-bold text-white mb-1">Netflix Premium — 7 Hari</h3>
-                <p class="text-sm text-gray-400 mb-4 leading-relaxed">Paket hemat untuk coba-coba. Full HD ready, garansi selama masa aktif.</p>
-                <div class="mt-auto flex items-end justify-between pt-4 border-t border-white/5">
-                    <div>
-                        <p class="text-[10px] text-gray-500 uppercase tracking-wider font-semibold">Harga</p>
-                        <p class="text-xl font-black text-brand-300">Rp 25.000<span class="text-sm font-normal text-gray-500">/7 hari</span></p>
-                    </div>
-                    <a href="https://wa.me/6283875839287?text=Halo%20Admin%2C%20saya%20mau%20pesan%20Netflix%20Premium%207%20Hari" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-white/5 hover:bg-brand-600 text-gray-300 hover:text-white text-xs font-bold px-3.5 py-2 rounded-lg transition-all border border-white/10 hover:border-brand-500">
-                        Pesan
-                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
-                    </a>
-                </div>
-            </article>
+</div>
 
-            <!-- Card: Canva Pro -->
-            <article class="catalog-card group relative flex flex-col bg-surface-800 border border-white/5 rounded-2xl p-6 hover:border-brand-500/50 hover:bg-surface-700/80 hover:-translate-y-1 hover:shadow-glow transition-all duration-300" data-category="streaming">
-                <div class="flex items-start justify-between mb-4">
-                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/25 to-indigo-500/10 border border-purple-500/30 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                        </svg>
-                    </div>
-                    <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-brand-500/15 text-brand-300 border border-brand-500/30">
-                        <span class="w-1.5 h-1.5 rounded-full bg-brand-400"></span> Premium
-                    </span>
-                </div>
-                <h3 class="text-lg font-bold text-white mb-1">Akun Canva Pro</h3>
-                <p class="text-sm text-gray-400 mb-4 leading-relaxed">Akses semua fitur premium Canva, garansi penuh 30 hari.</p>
-                <div class="mt-auto flex items-end justify-between pt-4 border-t border-white/5">
-                    <div>
-                        <p class="text-[10px] text-gray-500 uppercase tracking-wider font-semibold">Mulai dari</p>
-                        <p class="text-xl font-black text-brand-300">Rp 50.000<span class="text-sm font-normal text-gray-500">/bulan</span></p>
-                    </div>
-                    <a href="https://wa.me/6283875839287?text=Halo%20Admin%2C%20saya%20mau%20pesan%20Akun%20Canva%20Pro" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-white/5 hover:bg-brand-600 text-gray-300 hover:text-white text-xs font-bold px-3.5 py-2 rounded-lg transition-all border border-white/10 hover:border-brand-500">
-                        Pesan
-                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
-                    </a>
-                </div>
-            </article>
+<!-- FOOTER -->
+<div class="footer">
+  <p><strong>ARSTORE</strong> — Jual Beli Akun & Jasa Sosmed</p>
+  <p>Hubungi: <a href="https://wa.me/6283875839287" style="color:#e94560;">WhatsApp +62 838-7583-9287</a></p>
+  <p style="margin-top:10px;">&copy; 2026 Arstore. Semua harga dalam Rupiah.</p>
+</div>
 
-            <!-- ============ BM & ADS ============ -->
+<!-- FLOATING WHATSAPP BUTTON -->
+<a href="https://wa.me/6283875839287?text=Halo%20Arstore%2C%20saya%20mau%20order" class="wa-float" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+</a>
 
-            <!-- Card: BM Facebook -->
-            <article class="catalog-card group relative flex flex-col bg-surface-800 border border-white/5 rounded-2xl p-6 hover:border-brand-500/50 hover:bg-surface-700/80 hover:-translate-y-1 hover:shadow-glow transition-all duration-300" data-category="bm">
-                <div class="flex items-start justify-between mb-4">
-                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600/25 to-indigo-500/10 border border-blue-600/30 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                        </svg>
-                    </div>
-                    <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-500/15 text-amber-400 border border-amber-500/30">
-                        <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> Ready
-                    </span>
-                </div>
-                <h3 class="text-lg font-bold text-white mb-1">Jual BM Facebook (Business Manager)</h3>
-                <p class="text-sm text-gray-400 mb-4 leading-relaxed">BM siap pakai untuk iklan, sudah terverifikasi. Cocok untuk advertiser.</p>
-                <div class="mt-auto flex items-end justify-between pt-4 border-t border-white/5">
-                    <div>
-                        <p class="text-[10px] text-gray-500 uppercase tracking-wider font-semibold">Mulai dari</p>
-                        <p class="text-xl font-black text-brand-300">Rp 300.000<span class="text-sm font-normal text-gray-500">/BM</span></p>
-                    </div>
-                    <a href="https://wa.me/6283875839287?text=Halo%20Admin%2C%20saya%20mau%20pesan%20BM%20Facebook" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-white/5 hover:bg-brand-600 text-gray-300 hover:text-white text-xs font-bold px-3.5 py-2 rounded-lg transition-all border border-white/10 hover:border-brand-500">
-                        Pesan
-                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Card: BM Ads / Akun Iklan -->
-            <article class="catalog-card group relative flex flex-col bg-surface-800 border border-white/5 rounded-2xl p-6 hover:border-brand-500/50 hover:bg-surface-700/80 hover:-translate-y-1 hover:shadow-glow transition-all duration-300" data-category="bm">
-                <div class="flex items-start justify-between mb-4">
-                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-600/25 to-teal-500/10 border border-emerald-600/30 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                    <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
-                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Pro
-                    </span>
-                </div>
-                <h3 class="text-lg font-bold text-white mb-1">Akun Iklan (Ads) Facebook</h3>
-                <p class="text-sm text-gray-400 mb-4 leading-relaxed">Akun iklan dengan limit tinggi, siap pakai untuk campaign.</p>
-                <div class="mt-auto flex items-end justify-between pt-4 border-t border-white/5">
-                    <div>
-                        <p class="text-[10px] text-gray-500 uppercase tracking-wider font-semibold">Mulai dari</p>
-                        <p class="text-xl font-black text-brand-300">Rp 200.000<span class="text-sm font-normal text-gray-500">/akun</span></p>
-                    </div>
-                    <a href="https://wa.me/6283875839287?text=Halo%20Admin%2C%20saya%20mau%20pesan%20Akun%20Iklan%20Facebook" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-white/5 hover:bg-brand-600 text-gray-300 hover:text-white text-xs font-bold px-3.5 py-2 rounded-lg transition-all border border-white/10 hover:border-brand-500">
-                        Pesan
-                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
-                    </a>
-                </div>
-            </article>
-
-            <!-- ============ AKUN SOSMED ============ -->
-
-            <!-- Card: Akun Instagram -->
-            <article class="catalog-card group relative flex flex-col bg-surface-800 border border-white/5 rounded-2xl p-6 hover:border-brand-500/50 hover:bg-surface-700/80 hover:-translate-y-1 hover:shadow-glow transition-all duration-300" data-category="akun">
-                <div class="flex items-start justify-between mb-4">
-                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-fuchsia-500/25 to-pink-500/10 border border-fuchsia-500/30 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-fuchsia-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                        </svg>
-                    </div>
-                    <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-fuchsia-500/15 text-fuchsia-400 border border-fuchsia-500/30">
-                        <span class="w-1.5 h-1.5 rounded-full bg-fuchsia-400"></span> Fresh
-                    </span>
-                </div>
-                <h3 class="text-lg font-bold text-white mb-1">Akun Instagram (Fresh/ Aged)</h3>
-                <p class="text-sm text-gray-400 mb-4 leading-relaxed">Akun IG fresh atau aged, siap pakai untuk jualan/branding.</p>
-                <div class="mt-auto flex items-end justify-between pt-4 border-t border-white/5">
-                    <div>
-                        <p class="text-[10px] text-gray-500 uppercase tracking-wider font-semibold">Mulai dari</p>
-                        <p class="text-xl font-black text-brand-300">Hubungin admin<span class="text-sm font-normal text-gray-500">/akun</span></p>
-                    </div>
-                    <a href="https://wa.me/6283875839287?text=Halo%20Admin%2C%20saya%20mau%20pesan%20Akun%20Instagram" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-white/5 hover:bg-brand-600 text-gray-300 hover:text-white text-xs font-bold px-3.5 py-2 rounded-lg transition-all border border-white/10 hover:border-brand-500">
-                        Pesan
-                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Card: Akun TikTok -->
-            <article class="catalog-card group relative flex flex-col bg-surface-800 border border-white/5 rounded-2xl p-6 hover:border-brand-500/50 hover:bg-surface-700/80 hover:-translate-y-1 hover:shadow-glow transition-all duration-300" data-category="akun">
-                <div class="flex items-start justify-between mb-4">
-                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-slate-500/25 to-zinc-500/10 border border-slate-500/30 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
-                        </svg>
-                    </div>
-                    <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-500/15 text-slate-300 border border-slate-500/30">
-                        <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span> Fresh
-                    </span>
-                </div>
-                <h3 class="text-lg font-bold text-white mb-1">Akun TikTok (Fresh/ Aged)</h3>
-                <p class="text-sm text-gray-400 mb-4 leading-relaxed">Akun TikTok siap pakai untuk konten & affiliate.</p>
-                <div class="mt-auto flex items-end justify-between pt-4 border-t border-white/5">
-                    <div>
-                        <p class="text-[10px] text-gray-500 uppercase tracking-wider font-semibold">Mulai dari</p>
-                        <p class="text-xl font-black text-brand-300">Hubungin admin<span class="text-sm font-normal text-gray-500">/akun</span></p>
-                    </div>
-                    <a href="https://wa.me/6283875839287?text=Halo%20Admin%2C%20saya%20mau%20pesan%20Akun%20TikTok" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-white/5 hover:bg-brand-600 text-gray-300 hover:text-white text-xs font-bold px-3.5 py-2 rounded-lg transition-all border border-white/10 hover:border-brand-500">
-                        Pesan
-                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Card: Akun Telegram -->
-            <article class="catalog-card group relative flex flex-col bg-surface-800 border border-white/5 rounded-2xl p-6 hover:border-brand-500/50 hover:bg-surface-700/80 hover:-translate-y-1 hover:shadow-glow transition-all duration-300" data-category="akun">
-                <div class="flex items-start justify-between mb-4">
-                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-500/25 to-blue-500/10 border border-sky-500/30 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                        </svg>
-                    </div>
-                    <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-sky-500/15 text-sky-400 border border-sky-500/30">
-                        <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span> Fresh
-                    </span>
-                </div>
-                <h3 class="text-lg font-bold text-white mb-1">Akun Telegram</h3>
-                <p class="text-sm text-gray-400 mb-4 leading-relaxed">Akun Telegram fresh, siap untuk channel/group/bot.</p>
-                <div class="mt-auto flex items-end justify-between pt-4 border-t border-white/5">
-                    <div>
-                        <p class="text-[10px] text-gray-500 uppercase tracking-wider font-semibold">Mulai dari</p>
-                        <p class="text-xl font-black text-brand-300">Hubungin admin<span class="text-sm font-normal text-gray-500">/akun</span></p>
-                    </div>
-                    <a href="https://wa.me/6283875839287?text=Halo%20Admin%2C%20saya%20mau%20pesan%20Akun%20Telegram" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-white/5 hover:bg-brand-600 text-gray-300 hover:text-white text-xs font-bold px-3.5 py-2 rounded-lg transition-all border border-white/10 hover:border-brand-500">
-                        Pesan
-                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Card: Akun Gmail -->
-            <article class="catalog-card group relative flex flex-col bg-surface-800 border border-white/5 rounded-2xl p-6 hover:border-brand-500/50 hover:bg-surface-700/80 hover:-translate-y-1 hover:shadow-glow transition-all duration-300" data-category="akun">
-                <div class="flex items-start justify-between mb-4">
-                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500/25 to-yellow-500/10 border border-red-500/30 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                    </div>
-                    <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-red-500/15 text-red-400 border border-red-500/30">
-                        <span class="w-1.5 h-1.5 rounded-full bg-red-400"></span> Fresh
-                    </span>
-                </div>
-                <h3 class="text-lg font-bold text-white mb-1">Akun Gmail (Fresh/ Aged)</h3>
-                <p class="text-sm text-gray-400 mb-4 leading-relaxed">Akun Gmail fresh atau aged, cocok untuk verifikasi & bisnis.</p>
-                <div class="mt-auto flex items-end justify-between pt-4 border-t border-white/5">
-                    <div>
-                        <p class="text-[10px] text-gray-500 uppercase tracking-wider font-semibold">Mulai dari</p>
-                        <p class="text-xl font-black text-brand-300">Hubungin admin<span class="text-sm font-normal text-gray-500">/akun</span></p>
-                    </div>
-                    <a href="https://wa.me/6283875839287?text=Halo%20Admin%2C%20saya%20mau%20pesan%20Akun%20Gmail" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-white/5 hover:bg-brand-600 text-gray-300 hover:text-white text-xs font-bold px-3.5 py-2 rounded-lg transition-all border border-white/10 hover:border-brand-500">
-                        Pesan
-                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
-                    </a>
-                </div>
-            </article>
-
-            <!-- ============ JASA LAINNYA ============ -->
-
-            <!-- Card: Jasa Desain Logo -->
-            <article class="catalog-card group relative flex flex-col bg-surface-800 border border-white/5 rounded-2xl p-6 hover:border-brand-500/50 hover:bg-surface-700/80 hover:-translate-y-1 hover:shadow-glow transition-all duration-300" data-category="jasa">
-                <div class="flex items-start justify-between mb-4">
-                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-500/25 to-amber-500/10 border border-yellow-500/30 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                        </svg>
-                    </div>
-                    <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-sky-500/15 text-sky-400 border border-sky-500/30">
-                        <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span> Custom
-                    </span>
-                </div>
-                <h3 class="text-lg font-bold text-white mb-1">Jasa Desain Logo</h3>
-                <p class="text-sm text-gray-400 mb-4 leading-relaxed">Desain logo profesional, revisi sampai puas. File vektor siap pakai.</p>
-                <div class="mt-auto flex items-end justify-between pt-4 border-t border-white/5">
-                    <div>
-                        <p class="text-[10px] text-gray-500 uppercase tracking-wider font-semibold">Mulai dari</p>
-                        <p class="text-xl font-black text-brand-300">Rp 100.000<span class="text-sm font-normal text-gray-500">/desain</span></p>
-                    </div>
-                    <a href="https://wa.me/6283875839287?text=Halo%20Admin%2C%20saya%20mau%20pesan%20Jasa%20Desain%20Logo" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-white/5 hover:bg-brand-600 text-gray-300 hover:text-white text-xs font-bold px-3.5 py-2 rounded-lg transition-all border border-white/10 hover:border-brand-500">
-                        Pesan
-                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
-                    </a>
-                </div>
-            </article>
-
-        </div>
-
-        <p id="empty-state" class="hidden text-center text-gray-500 py-16 text-sm">Tidak ada layanan pada kategori ini.</p>
-    </main>
-
-    <!-- Keunggulan -->
-    <section id="layanan" class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 border-t border-white/5">
-        <div class="text-center mb-12">
-            <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight">Kenapa Pilih ARSTORE?</h2>
-            <p class="mt-2 text-sm text-gray-400">Kami berkomitmen memberikan layanan terbaik untuk Anda.</p>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            <div class="bg-surface-800 border border-white/5 rounded-2xl p-6 text-center hover:border-brand-500/50 hover:-translate-y-1 transition-all duration-300">
-                <div class="w-12 h-12 mx-auto rounded-xl bg-brand-500/15 border border-brand-500/30 flex items-center justify-center mb-4">
-                    <svg class="w-6 h-6 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                </div>
-                <h3 class="font-bold text-white mb-1">Proses Instan</h3>
-                <p class="text-sm text-gray-400">Order langsung diproses setelah pembayaran.</p>
-            </div>
-            <div class="bg-surface-800 border border-white/5 rounded-2xl p-6 text-center hover:border-brand-500/50 hover:-translate-y-1 transition-all duration-300">
-                <div class="w-12 h-12 mx-auto rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center mb-4">
-                    <svg class="w-6 h-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                    </svg>
-                </div>
-                <h3 class="font-bold text-white mb-1">Tanpa Login</h3>
-                <p class="text-sm text-gray-400">Cukup username/link, tanpa password.</p>
-            </div>
-            <div class="bg-surface-800 border border-white/5 rounded-2xl p-6 text-center hover:border-brand-500/50 hover:-translate-y-1 transition-all duration-300">
-                <div class="w-12 h-12 mx-auto rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center mb-4">
-                    <svg class="w-6 h-6 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                </div>
-                <h3 class="font-bold text-white mb-1">Harga Termurah</h3>
-                <p class="text-sm text-gray-400">Bersaing tanpa mengurangi kualitas layanan.</p>
-            </div>
-            <div class="bg-surface-800 border border-white/5 rounded-2xl p-6 text-center hover:border-brand-500/50 hover:-translate-y-1 transition-all duration-300">
-                <div class="w-12 h-12 mx-auto rounded-xl bg-sky-500/15 border border-sky-500/30 flex items-center justify-center mb-4">
-                    <svg class="w-6 h-6 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
-                </div>
-                <h3 class="font-bold text-white mb-1">Support 24/7</h3>
-                <p class="text-sm text-gray-400">Tim ramah siap membantu kapan saja.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 border-t border-white/5">
-        <div class="text-center mb-12">
-            <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight">Pertanyaan Umum</h2>
-            <p class="mt-2 text-sm text-gray-400">Hal yang sering ditanyakan pelanggan.</p>
-        </div>
-        <div class="space-y-3">
-            <details class="group bg-surface-800 border border-white/5 rounded-xl p-5 open:border-brand-500/50 transition-all">
-                <summary class="cursor-pointer list-none flex items-center justify-between font-semibold text-white">
-                    Apakah saya perlu memberikan password akun?
-                    <svg class="w-4 h-4 text-brand-400 transition-transform group-open:rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-                    </svg>
-                </summary>
-                <p class="mt-3 text-sm text-gray-400 leading-relaxed">
-                    <b class="text-white">Tidak.</b> Untuk layanan SMM (followers, likes, views), kami hanya membutuhkan
-                    <b class="text-white">username atau link postingan</b> Anda — tanpa password. Untuk akun digital (Netflix, Canva, BM, akun sosmed),
-                    <b class="text-white">Anda yang akan menerima</b> email & password akun dari kami, bukan sebaliknya.
-                </p>
-            </details>
-            <details class="group bg-surface-800 border border-white/5 rounded-xl p-5 open:border-brand-500/50 transition-all">
-                <summary class="cursor-pointer list-none flex items-center justify-between font-semibold text-white">
-                    Berapa lama prosesnya?
-                    <svg class="w-4 h-4 text-brand-400 transition-transform group-open:rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-                    </svg>
-                </summary>
-                <p class="mt-3 text-sm text-gray-400 leading-relaxed">Proses order umumnya 1–24 jam tergantung jenis layanan dan antrian. Akun digital & BM biasanya dikirim &lt; 1 jam setelah pembayaran.</p>
-            </details>
-            <details class="group bg-surface-800 border border-white/5 rounded-xl p-5 open:border-brand-500/50 transition-all">
-                <summary class="cursor-pointer list-none flex items-center justify-between font-semibold text-white">
-                    Bagaimana cara order akun digital / BM?
-                    <svg class="w-4 h-4 text-brand-400 transition-transform group-open:rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-                    </svg>
-                </summary>
-                <p class="mt-3 text-sm text-gray-400 leading-relaxed">
-                    Setelah pembayaran dikonfirmasi, kami akan mengirimkan <b class="text-white">detail akun (email & password)</b>
-                    langsung ke WhatsApp Anda. Anda bebas mengubah password setelah menerimanya, dan garansi tetap berlaku selama masa aktif.
-                </p>
-            </details>
-            <details class="group bg-surface-800 border border-white/5 rounded-xl p-5 open:border-brand-500/50 transition-all">
-                <summary class="cursor-pointer list-none flex items-center justify-between font-semibold text-white">
-                    Apakah BM Facebook aman & legal?
-                    <svg class="w-4 h-4 text-brand-400 transition-transform group-open:rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-                    </svg>
-                </summary>
-                <p class="mt-3 text-sm text-gray-400 leading-relaxed">
-                    BM yang kami jual adalah akun yang sudah <b class="text-white">siap pakai & terverifikasi</b>, cocok untuk kebutuhan iklan.
-                    Kami sarankan segera ganti email & password setelah menerima akun, dan gunakan sesuai kebijakan Facebook.
-                </p>
-            </details>
-            <details class="group bg-surface-800 border border-white/5 rounded-xl p-5 open:border-brand-500/50 transition-all">
-                <summary class="cursor-pointer list-none flex items-center justify-between font-semibold text-white">
-                    Metode pembayaran apa saja?
-                    <svg class="w-4 h-4 text-brand-400 transition-transform group-open:rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-                    </svg>
-                </summary>
-                <p class="mt-3 text-sm text-gray-400 leading-relaxed">Kami menerima transfer bank, e-wallet (Dana, OVO, GoPay, ShopeePay), dan QRIS.</p>
-            </details>
-            <details class="group bg-surface-800 border border-white/5 rounded-xl p-5 open:border-brand-500/50 transition-all">
-                <summary class="cursor-pointer list-none flex items-center justify-between font-semibold text-white">
-                    Apakah ada garansi?
-                    <svg class="w-4 h-4 text-brand-400 transition-transform group-open:rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-                    </svg>
-                </summary>
-                <p class="mt-3 text-sm text-gray-400 leading-relaxed">Tentu. Setiap paket memiliki garansi isi ulang / garansi akun sesuai ketentuan yang berlaku.</p>
-            </details>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section id="kontak" class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-        <div class="relative overflow-hidden bg-gradient-to-br from-brand-700 via-brand-600 to-brand-900 rounded-3xl p-10 sm:p-14 text-center shadow-2xl shadow-brand-700/40">
-            <div class="absolute -top-20 -right-20 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
-            <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-black/30 rounded-full blur-3xl"></div>
-            <div class="relative">
-                <h2 class="text-2xl sm:text-4xl font-black text-white mb-4">Siap Meningkatkan Sosial Media Anda?</h2>
-                <p class="text-brand-100 mb-8 max-w-xl mx-auto">Hubungi admin kami sekarang dan dapatkan penawaran spesial hari ini!</p>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-                    <a href="https://wa.me/6283875839287" target="_blank" rel="noopener" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white text-brand-700 hover:bg-slate-100 font-bold px-8 py-3.5 rounded-xl transition shadow-lg active:scale-[0.98]">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                        </svg>
-                        Order via WhatsApp
-                    </a>
-                    <a href="#katalog" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold px-8 py-3.5 rounded-xl transition backdrop-blur-sm active:scale-[0.98]">
-                        Lihat Katalog Lagi
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="border-t border-white/5 py-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
-            <div>&copy; <span id="year"></span> <b class="text-gray-300">ARSTORE</b>. All rights reserved.</div>
-            <div class="flex gap-6">
-                <a href="#" class="hover:text-brand-400 transition-colors">Instagram</a>
-                <a href="#" class="hover:text-brand-400 transition-colors">TikTok</a>
-                <a href="https://wa.me/6283875839287" target="_blank" rel="noopener" class="hover:text-brand-400 transition-colors">WhatsApp</a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const cards = document.querySelectorAll('.catalog-card');
-        const emptyState = document.getElementById('empty-state');
-
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterButtons.forEach(b => {
-                    b.classList.remove('active', 'bg-brand-600', 'text-white', 'shadow-lg', 'shadow-brand-600/25');
-                    b.classList.add('bg-white/5', 'text-gray-400', 'border', 'border-white/10');
-                });
-                btn.classList.add('active', 'bg-brand-600', 'text-white', 'shadow-lg', 'shadow-brand-600/25');
-                btn.classList.remove('bg-white/5', 'text-gray-400', 'border', 'border-white/10');
-
-                const filter = btn.dataset.filter;
-                let visible = 0;
-
-                cards.forEach(card => {
-                    const match = filter === 'all' || card.dataset.category === filter;
-                    card.classList.toggle('hidden', !match);
-                    if (match) visible++;
-                });
-
-                emptyState.classList.toggle('hidden', visible > 0);
-            });
-        });
-    </script>
 </body>
 </html>
